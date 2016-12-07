@@ -1,9 +1,9 @@
 class CreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
-      t.string :name
-      t.string :email
-      t.string :avatar
+      t.string :name, limit: 64
+      t.string :email, limit: 255
+      t.string :avatar, limit: 255
 
       t.timestamps
     end

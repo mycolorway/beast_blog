@@ -1,10 +1,10 @@
 class CreatePosts < ActiveRecord::Migration[5.0]
   def change
     create_table :posts do |t|
-      t.string :title
+      t.string :title, limit: 255
       t.text :content
       t.references :author, index: true
-      t.string :slug
+      t.string :slug, limit: 64
 
       t.timestamps
     end

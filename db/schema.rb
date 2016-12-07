@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206080811) do
+ActiveRecord::Schema.define(version: 20161207024536) do
 
   create_table "authors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",            limit: 64
     t.text     "bio"
-    t.string   "avatar"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "avatar",          limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "email",           limit: 255
+    t.string   "hashed_password", limit: 64
+    t.string   "salt",            limit: 20
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,21 +34,21 @@ ActiveRecord::Schema.define(version: 20161206080811) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",      limit: 255
     t.text     "content"
     t.integer  "author_id"
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "slug",       limit: 64
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "avatar"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 64
+    t.string   "email",      limit: 255
+    t.string   "avatar",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
