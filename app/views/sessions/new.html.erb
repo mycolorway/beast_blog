@@ -1,0 +1,9 @@
+<h1>Author Login</h1>
+<%= form_tag sessions_path do -%>
+  <label for="email">Login</label>
+  <%= text_field_tag :email, params[:email] %>
+  <label for="password">Password</label>
+  <%= password_field_tag :password, params[:password] %>
+
+  <%= submit_tag "Login"%>
+<% end %>

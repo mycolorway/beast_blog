@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207024536) do
-
-  create_table "authors", force: :cascade do |t|
-    t.string   "name",            limit: 64
-    t.text     "bio"
-    t.string   "avatar",          limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "email",           limit: 255
-    t.string   "hashed_password", limit: 64
-    t.string   "salt",            limit: 20
-  end
+ActiveRecord::Schema.define(version: 20161211144244) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -44,11 +33,15 @@ ActiveRecord::Schema.define(version: 20161207024536) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 64
-    t.string   "email",      limit: 255
-    t.string   "avatar",     limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",            limit: 64
+    t.string   "email",           limit: 255
+    t.string   "avatar",          limit: 255
+    t.text     "bio"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "hashed_password", limit: 65
+    t.string   "salt",            limit: 25
+    t.string   "type",            limit: 128
   end
 
 end

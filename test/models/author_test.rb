@@ -4,7 +4,7 @@ class AuthorTest < ActiveSupport::TestCase
   attr_reader :author, :plain_password
 
   def setup
-    @author = authors :terry
+    @author = users :terry
     @plain_password = 'imthesuperman'
   end
 

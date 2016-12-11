@@ -5,6 +5,11 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :email, limit: 255
       t.string :avatar, limit: 255
 
+      t.string :name, limit: 64
+      t.text :bio
+      t.string :avatar, limit: 255
+
+
       t.timestamps
     end
   end
