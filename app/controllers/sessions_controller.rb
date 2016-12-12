@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -7,7 +8,6 @@ class SessionsController < ApplicationController
 
     if @user
       log_in @user
-
       redirect_to root_path
     else
       render new_session_path
@@ -15,5 +15,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
   end
 end

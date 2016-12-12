@@ -5,4 +5,9 @@ class Author < User
   validates :password, presence: true
 
   has_many :posts
+
+  def author?
+    true
+  end
+
  end
