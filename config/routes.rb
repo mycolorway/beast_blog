@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: :login
   match '/logout', to: "sessions#destroy", via: [:get, :delete], as: :logout
 
+
   match "/auth/:provider/callback", :to => 'sessions#create', via: :all
 
   resources :posts do
     resources :comments, only: [:create]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #feed
+  get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }
+
 end

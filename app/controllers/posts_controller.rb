@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.page(params[:page])
+    @posts = Post.order("id DESC")
+    respond_to do |format|
+      format.html { @posts = @posts.page(params[:page]) }
+      format.atom
+    end
   end
 
   def show
