@@ -19,3 +19,18 @@
 <%= link_to 'Edit', edit_post_path(@post.slug) %> |
 <% end %>
 <%= link_to 'Back', posts_path %>
+
+<h2>Add Comments</h2>
+
+<%= form_for [@post, Comment.new] do |f| %>
+  <p>
+    <%= f.label :content, "New Comment"%>
+    <%= f.text_area :content %>
+  </p>
+  <p><%= f.submit "Add comment" %></p>
+<% end %>
+
+<h2>Comments</h2>
+<% @comments.each do |comment| %>
+  <p><%= comment.user.name %>: <%= comment.content %></p>
+<% end %>
