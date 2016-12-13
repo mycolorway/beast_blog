@@ -2,7 +2,9 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @post = posts(:one)
+    @post = posts :one
+    @user = users :terry
+    sign_in_as @user
   end
 
   test "should get index" do
@@ -16,11 +18,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create post" do
+    slug = random_string
+
     assert_difference('Post.count') do
-      post posts_url, params: { post: { content: @post.content, slug: @post.slug, title: @post.title } }
+      post posts_url, params: { post: { content: slug, slug: slug, title: slug } }
     end
 
-    assert_redirected_to post_url(Post.last)
+    assert_redirected_to post_url(slug)
   end
 
   test "should show post" do
@@ -34,8 +38,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { content: @post.content, slug: @post.slug, title: @post.title } }
-    assert_redirected_to post_url(@post)
+    slug = random_string
+
+    patch post_url(@post), params: { post: { content: slug, slug: slug, title: slug } }
+    assert_redirected_to post_url(slug)
   end
 
   test "should destroy post" do

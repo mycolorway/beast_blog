@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  content: MyText
-  author_id: 1
-  slug: MyString
-
-two:
-  title: MyString
-  content: MyText
-  author_id: 1
-  slug: MyString
+  title: Santa Claus is coming to town
+  content: Merry Xmas
+  author: terry
+  slug: santa-claus-is-comming-to-town
