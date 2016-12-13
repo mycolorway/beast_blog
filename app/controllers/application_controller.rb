@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  helper_method :current_user, :logged_in?
+
   protected
 
   def log_in user
@@ -40,7 +42,6 @@ class ApplicationController < ActionController::Base
       not_found
     end
   end
-
 
   def not_found
     raise ActionController::RoutingError.new('Not Found')
