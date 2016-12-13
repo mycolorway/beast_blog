@@ -1,4 +1,4 @@
-module Authentication
+module Loginable
   extend ActiveSupport::Concern
 
   class_methods do
