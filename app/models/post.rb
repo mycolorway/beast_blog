@@ -1,9 +1,13 @@
 class Post < ApplicationRecord
+  enum category: { article: 0, album: 1 }
+
   belongs_to :author, optional: true
 
   has_many :comments
+  has_many :photos
 
   validates :slug, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true
 
   before_save :format_slug
 

@@ -1,0 +1,14 @@
+<%= form_for(Photo.new, url: album_photos_path(@album.slug), html: { multipart: true } ) do |f|%>
+  <div class="field">
+    <%= file_field_tag :photo%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h2><%= @album.title %></h2>
+
+<% @album.photos.each do |photo|%>
+  <%= image_tag photo.photo.preview.url %>
+<% end %>

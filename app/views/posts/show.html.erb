@@ -15,7 +15,7 @@
   <%= @post.slug %>
 </p>
 
-<% if current_user.author? %>
+<% if current_user&.author? %>
 <%= link_to 'Edit', edit_post_path(@post.slug) %> |
 <% end %>
 <%= link_to 'Back', posts_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213093728) do
+ActiveRecord::Schema.define(version: 20161214075431) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "provider",   limit: 64
@@ -32,13 +32,26 @@ ActiveRecord::Schema.define(version: 20161213093728) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.text     "desc"
+    t.string   "content_type"
+    t.integer  "file_size"
+    t.string   "file_name"
+    t.string   "photo"
+    t.integer  "post_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["post_id"], name: "index_photos_on_post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "content"
     t.integer  "author_id"
     t.string   "slug",       limit: 64
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "category",               default: 0
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 

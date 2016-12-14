@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  resources :albums do
+    resources :photos, only: [:create]
+  end
+
   #feed
   get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }
 

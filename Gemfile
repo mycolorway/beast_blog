@@ -35,6 +35,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari', '~> 0.17'
 gem 'figaro', '~> 1.1'
 
+# Photo
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'rmagick', '~> 2.15'
+gem 'mime-types', '~> 3.1'
+gem 'file_validators'
+
 gem 'omniauth', '~> 1.3'
 gem 'omniauth-github', '~> 1.1'
 

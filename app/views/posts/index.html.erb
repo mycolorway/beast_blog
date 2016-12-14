@@ -19,7 +19,7 @@
         <td><%= post.content %></td>
         <td><%= post.slug %></td>
         <td><%= link_to 'Show', post_path(post.slug)%></td>
-        <% if current_user.author? %>
+        <% if current_user&.author? %>
         <td><%= link_to 'Edit', edit_post_path(post.slug) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -30,6 +30,6 @@
 
 <br>
 
-<% if current_user.author? %>
+<% if current_user&.author? %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
