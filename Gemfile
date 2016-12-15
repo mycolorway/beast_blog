@@ -61,3 +61,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Front-End
+gem 'tao_on_rails', git: 'https://github.com/mycolorway/tao_on_rails.git', branch: :master
