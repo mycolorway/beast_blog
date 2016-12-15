@@ -8,3 +8,5 @@
 
 terry = Author.create(name: 'Terry Tai', email: 'poshboytl@gmail.com', avatar: 'http://en.gravatar.com/userimage/2432070/00b9a1609df2774d2fdbc03b49ad8546.jpeg', bio: 'Shooting Man', password: 'asdfghjkl')
 
+she = Author.create(name: 'Chenglu She', email: 'chenglu2@mycolorway.com', avatar: 'https://avatar.tower.im/38637dd1026d497b91a0971eb45eb834', bio: 'Superman', password: 'asdfghjkl')
+
