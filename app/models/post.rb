@@ -15,13 +15,14 @@ class Post < ApplicationRecord
   def to_slug
     slug = self.slug
     slug.gsub! /['`]/,""
+    slug.gsub! /[.`]/,""
     slug.gsub! /\s*@\s*/, " at "
     slug.gsub! /\s*&\s*/, " and "
     slug.gsub! /\s*[^A-Za-z0-9\.\-]\s*/, '-'
     slug.gsub! /_+/,"-"
     slug.gsub! /\A[_\.]+|[_\.]+\z/,""
 
-    slug
+    URI.encode slug
   end
 
   private
