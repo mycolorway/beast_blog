@@ -1,0 +1,12 @@
+zh-CN:
+  posts:
+    show:
+      login_as_github: 请用github登录后评论
+      want_comment: 想说点什么？
+      no_comments_yet: 还没有人留言
+      have_some_comments: 说点什么吧..
+    comments:
+      more_comments: 更多评论
+      loading: 正在加载
+      no_more: 没有更多评论了
+

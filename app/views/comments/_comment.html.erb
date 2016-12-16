@@ -1,0 +1,10 @@
+<beast-comment>
+  <div class="user-info">
+    <%= image_tag comment.user.avatar, class: 'avatar' %>
+    <div class="right">
+      <div class="user-name"><%= comment.user.name %></div>
+      <div class="created-at"><%= comment.created_at.strftime("%d %b,%Y") %></div>
+    </div>
+  </div>
+  <div class="content"><%= comment.content %></div>
+</beast-comment>

@@ -1,0 +1,11 @@
+<beast-header>
+  <div class="logo"><%= image_tag 'logo.png' %></div>
+  <beast-header-menu>
+    <ul>
+      <li<%= ' class=active' if controller_name == 'posts' %>><%= link_to 'BLOG', posts_path %></li>
+      <li<%= ' class=active' if controller_name == 'archives' %>><%= link_to 'ARCHIVE', archive_path %></li>
+      <li><%= link_to 'GITHUB', 'javascript:;' %></li>
+      <li><%= link_to 'RSS', 'javascript:;' %></li>
+    </ul>
+  </beast-header-menu>
+</beast-header>

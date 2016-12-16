@@ -1,0 +1,31 @@
+@import 'default/base';
+
+beast-comment {
+  display: block;
+  padding: 30px 0px;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .user-info {
+    display: flex;
+    margin-bottom: $margin-size-2;
+    .avatar {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      margin-right: $margin-size-2;
+    }
+    .right {
+      .user-name {
+        margin-bottom: $margin-size-1;
+      }
+      .created-at {
+        font-size: $font-size-small;
+        color: $color-light-text;
+      }
+    }
+  }
+}

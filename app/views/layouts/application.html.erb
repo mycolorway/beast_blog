@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BeastBlog</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/head' %>
   </head>
-
   <body>
-    <%= yield %>
+    <<%= page_id.dasherize %>-page layout="default" class="page">
+      <%= render 'layouts/header' %>
+      <div class="page-main">
+        <beast-page-content class="page-content">
+          <%= yield %>
+        </beast-page-content>
+      </div>
+    </<%= page_id.dasherize %>-page>
   </body>
 </html>

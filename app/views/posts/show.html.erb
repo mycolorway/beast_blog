@@ -1,40 +1,37 @@
-<p id="notice"><%= notice %></p>
+<beast-post>
+  <article>
+    <h2 class="title">
+      <%= link_to @post.title, 'javascript:;' %>
+    </h2>
+    <div class="content">
+      <%= @post.content.html_safe %>
+    </div>
+  </article>
+</beast-post>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @post.slug %>
-</p>
-
-<% if current_user&.author? %>
-<%= link_to 'Edit', edit_post_path(@post.slug) %> |
+<div class="comments-area">
+<% if @comments.any? %>
+  <%= render 'comments', post: @post, comments: @comments %>
+<% else %>
+  <div class="no-comments">
+    <%= t '.no_comments_yet' %>
+  </div>
 <% end %>
-<%= link_to 'Back', posts_path %>
-
-<h2>Add Comments</h2>
+</div>
 
 <% if logged_in? %>
-<%= form_for [@post, Comment.new] do |f| %>
-  <p>
-    <%= f.label :content, "New Comment"%>
-    <%= f.text_area :content %>
-  </p>
-  <p><%= f.submit "Add comment" %></p>
-<% end %>
+  <beast-comment-input>
+    <beast-form>
+    <%= simple_form_for Comment.new(post: @post), url: post_comments_path(@post),
+      method: 'POST', remote: true do |f| %>
+      <%= f.text_area :content, placeholder: t('.have_some_comments') %>
+      <%= f.button :button, '提交' %>
+    <% end %>
+    </beast-form>
+  </beast-comment-input>
 <% else %>
-  <%= link_to 'Login as github to comment', '/auth/github'%>
-<% end %>
-
-<h2>Comments</h2>
-<% @comments.each do |comment| %>
-  <p><%= comment.user.name %>: <%= comment.content %></p>
+  <div class="login-to-comment">
+    <%= t('.want_comment') %>
+    <%= link_to t('.login_as_github'), '/auth/github'%>
+  </div>
 <% end %>

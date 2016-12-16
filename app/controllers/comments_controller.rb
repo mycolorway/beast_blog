@@ -1,10 +1,13 @@
 class CommentsController < ApplicationController
   before_action :login_required, only: [:create]
-  before_action :set_post, only: [:create]
+  before_action :set_post, only: [:create, :index]
+
+  def index
+    @comments = @post.comments.page(params[:page]).per(30)
+  end
 
   def create
-    @post.comments.create(comment_params.merge(user_id: current_user.id))
-    redirect_to post_path(@post.slug)
+    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
   end
 
   private

@@ -1,0 +1,24 @@
+@import 'default/base';
+
+posts-show-page {
+  .login-to-comment {
+    background: #fdfdfd;
+    border: 1px solid $color-border;
+    padding: 40px;
+    margin: 30px 0px;
+    text-align: center;
+    border-radius: 2px;
+    background: #eeeeee;
+  }
+
+  .no-comments {
+    color: $color-light-text;
+  }
+
+  .more-comments, .no-comments {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -12,56 +12,56 @@
 
 ActiveRecord::Schema.define(version: 20161214075431) do
 
-  create_table "authentications", force: :cascade do |t|
+  create_table "authentications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "provider",   limit: 64
     t.string   "uid",        limit: 128
     t.string   "token",      limit: 128
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.index ["user_id"], name: "index_authentications_on_user_id"
+    t.index ["user_id"], name: "index_authentications_on_user_id", using: :btree
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text     "content"
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.text     "content",    limit: 65535
     t.integer  "post_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.text     "desc"
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.text     "desc",         limit: 65535
     t.string   "content_type"
     t.integer  "file_size"
     t.string   "file_name"
     t.string   "photo"
     t.integer  "post_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["post_id"], name: "index_photos_on_post_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["post_id"], name: "index_photos_on_post_id", using: :btree
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "content"
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string   "title"
+    t.text     "content",    limit: 65535
     t.integer  "author_id"
     t.string   "slug",       limit: 64
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.integer  "category",               default: 0
-    t.index ["author_id"], name: "index_posts_on_author_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "category",                 default: 0
+    t.index ["author_id"], name: "index_posts_on_author_id", using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name",            limit: 64
-    t.string   "email",           limit: 255
-    t.string   "avatar",          limit: 255
-    t.text     "bio"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "email"
+    t.string   "avatar"
+    t.text     "bio",             limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "hashed_password", limit: 65
     t.string   "salt",            limit: 25
     t.string   "type",            limit: 128

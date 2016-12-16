@@ -1,0 +1,22 @@
+@import 'default/base';
+
+button, .button {
+  display: inline-block;
+  padding: 4px 12px;
+  color: white;
+  border-radius: 4px;
+  background: #42b983;
+  border-color: transparent;
+  outline: none;
+  text-decoration: none;
+
+  &:hover, &:active {
+    background: #6fb998;
+  }
+
+  &[disabled], &.disabled {
+    cursor: not-allowed;
+    background: #CCCCCC;
+  }
+
+}

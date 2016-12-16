@@ -24,6 +24,11 @@ class Post < ApplicationRecord
     slug
   end
 
+  def abstract
+    # first p tag or first 100 words
+    /<p>(.*?)<\/p>/.match(self.content).to_a.last || self.content.first(100)
+  end
+
   private
 
   def format_slug

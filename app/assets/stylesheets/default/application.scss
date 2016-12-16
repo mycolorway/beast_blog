@@ -1,0 +1,23 @@
+@import 'base';
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", 微软雅黑, STXihei, 华文细黑, sans-serif;
+  height: 100%;
+  background: #ffffff;
+  width: 700px;  
+  margin: 0 auto;
+  font-size: $font-size;
+}
+
+p {
+  line-height: 2.0;
+}

@@ -1,0 +1,36 @@
+@import 'default/base';
+
+beast-post-list-item {
+  display: block;
+  border-bottom: 1px solid #ddd;
+  padding: 40px 0;
+  &:last-child {
+    border-bottom: none;
+  }
+  article {
+    .title a {
+      font-size: $font-size-h2;
+      color: $color-text;
+      text-decoration: none;
+      padding-bottom: 4px;
+      &:hover, &:active {
+        border-bottom: 2px solid #42b983;
+      }
+    }
+    .info {
+      color: $color-light-text;
+      font-size: $font-size-small;
+      margin-bottom: $margin-size-3;
+      span {
+        margin-right: $margin-size-1;
+      }
+    }
+    .abstract {
+      margin-bottom: $margin-size-1;
+    }
+    .more {
+      color: #42b983;
+      text-decoration: none;
+    }
+  }
+}
