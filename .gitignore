@@ -24,3 +24,4 @@
 /config/application.yml
 public/uploads
 tags
+db/schema.rb

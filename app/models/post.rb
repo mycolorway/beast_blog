@@ -5,23 +5,34 @@ class Post < ApplicationRecord
 
   has_many :comments
   has_many :photos
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   validates :slug, presence: true, uniqueness: true
   validates :title, presence: true, uniqueness: true
 
   before_save :format_slug
 
+  scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
+
+  def add_tags *tag_names
+    tag_names.each do |tag_name|
+      tags << Tag.find_or_initialize_by(name: tag_name)
+    end
+  end
+
 
   def to_slug
     slug = self.slug
     slug.gsub! /['`]/,""
+    slug.gsub! /[.`]/,""
     slug.gsub! /\s*@\s*/, " at "
     slug.gsub! /\s*&\s*/, " and "
     slug.gsub! /\s*[^A-Za-z0-9\.\-]\s*/, '-'
     slug.gsub! /_+/,"-"
     slug.gsub! /\A[_\.]+|[_\.]+\z/,""
 
-    slug
+    URI.encode slug
   end
 
   def abstract
