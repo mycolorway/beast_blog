@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214075431) do
+ActiveRecord::Schema.define(version: 20161216011152) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "provider",   limit: 64
@@ -53,6 +53,21 @@ ActiveRecord::Schema.define(version: 20161214075431) do
     t.datetime "updated_at",                         null: false
     t.integer  "category",               default: 0
     t.index ["author_id"], name: "index_posts_on_author_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_taggings_on_post_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       limit: 128
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
