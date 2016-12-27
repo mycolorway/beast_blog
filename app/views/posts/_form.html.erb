@@ -1,9 +1,11 @@
 <beast-form>
 <%= simple_form_for(post) do |f| %>
   <%= f.input :title %>
-  <beast-editor>
-    <%= f.hidden_field :content, as: :beast_editor %>
-  </beast-editor>
+  <%= f.input :content do %>
+    <beast-editor>
+      <%= f.text_area :content %>
+    </beast-editor>
+  <% end %>
   <%= f.input :slug %>
   <div class="form-buttons">
     <%= f.submit %>
