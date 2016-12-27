@@ -9,8 +9,7 @@ default: &default
   encoding: utf8mb4
   reconnect: false
   pool: 5
-  username: zhiren
-  password: zhirenpassword
+  username: root
 
 development:
   <<: *default
