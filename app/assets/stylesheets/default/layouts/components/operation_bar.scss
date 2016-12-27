@@ -1,0 +1,28 @@
+@import 'default/base';
+
+beast-operation-bar {
+  display: flex;
+  background: #fff;
+  box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid #42b983;
+  border-bottom: 1px solid #ddd;
+  .content {
+    width: 700px;
+    height: 100%;
+    display: flex;
+    a {
+      color: $color-light-text;
+      text-decoration: none;
+      font-size: $font-size-big;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      &:hover {
+        background: $color-grey-bg;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+zh-CN:
+  activerecord:
+    attributes:
+      post:
+        title: 标题
+        content: 内容
+        slug: 链接后缀

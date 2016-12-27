@@ -1,9 +1,16 @@
+@import 'default/base';
+
 beast-header {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .logo img {
-    height: 40px;
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: 40px;
+      margin-right: $margin-size-2;
+    }
   }
 }

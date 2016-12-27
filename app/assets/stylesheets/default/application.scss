@@ -13,9 +13,13 @@ body {
   font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", 微软雅黑, STXihei, 华文细黑, sans-serif;
   height: 100%;
   background: #ffffff;
-  width: 700px;  
-  margin: 0 auto;
   font-size: $font-size;
+
+  & > .page {
+    display: block;
+    width: 700px;
+    margin: 0 auto;
+  }
 }
 
 p {

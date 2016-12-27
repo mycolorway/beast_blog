@@ -1,0 +1,7 @@
+<% if logged_in? && current_user.author? %>
+  <beast-operation-bar>
+    <div class="content">
+      <%= link_to t('.new_post'), new_post_path %>
+    </div>
+  </beast-operation-bar>
+<% end %>
