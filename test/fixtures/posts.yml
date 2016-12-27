@@ -1,7 +1,12 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
+article:
   title: Santa Claus is coming to town
   content: Merry Xmas
   author: terry
   slug: santa-claus-is-comming-to-town
+  category: 0
+
+album:
+  title: Programming Life
+  author: terry
+  slug: programming-life
+  category: 1

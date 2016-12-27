@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
   def setup
-    @post = posts :one
+    @post = posts :article
   end
 
   # #to_slug
