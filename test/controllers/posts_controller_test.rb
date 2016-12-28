@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @post = posts :one
+    @post = posts :article
     @user = users :terry
     sign_in_as @user
   end
@@ -33,7 +33,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
-    get edit_post_url(@post)
+    get edit_post_url(@post.slug)
     assert_response :success
   end
 

@@ -66,5 +66,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Front-End
-gem 'tao_on_rails', git: 'https://github.com/mycolorway/tao_on_rails.git', branch: :master
+gem 'tao_on_rails'
 gem 'simple_form', '~> 3.3.1'
