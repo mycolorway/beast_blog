@@ -1,6 +1,7 @@
 require 'mina/rails'
 require 'mina/git'
 require 'mina/bundler'
+require 'mina/unicorn'
 require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (https://rvm.io)
 
@@ -15,8 +16,23 @@ set :domain, '54.222.154.195'
 set :deploy_to, '/www_space/beast_blog'
 set :repository, 'git@github.com:mycolorway/beast_blog.git'
 set :branch, 'master'
-set :rails_env, 'development'
+set :rails_env, 'production'
+set :unicorn_env, 'production'
+set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
+set :unicorn_cmd, "bundle exec /usr/bin/unicorn"
 
+
+set :shared_paths, [
+  'config/database.yml',
+  'config/unicorn.rb',
+  'config/application.yml',
+  'config/secrets.yml',
+  'config/oneapm.yml',
+  'public/uploads',
+  'db/backup',
+  'tmp',
+  'log',
+]
 # Optional settings:
 set :user, 'root'          # Username in the server to SSH to.
 #   set :port, '30000'           # SSH port number.
@@ -41,9 +57,19 @@ end
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
   # command %{rbenv install 2.3.0}
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/tmp"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp"]
   queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/db/backup"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/db/backup"]
   queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
+  queue! %[touch "#{deploy_to}/#{shared_path}/config/application.yml"]
+  queue! %[touch "#{deploy_to}/#{shared_path}/config/secrets.yml"]
+  queue! %[mkdir -p "#{deploy_to}/shared/pids/"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/pids"]
 end
 
 desc "Deploys the current version to the server."
@@ -65,6 +91,7 @@ task :deploy do
         command %{mkdir -p tmp/}
         command %{touch tmp/restart.txt}
       end
+      invoke 'unicorn:restart'
     end
   end
 
