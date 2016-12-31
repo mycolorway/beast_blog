@@ -20,6 +20,7 @@ set :rails_env, 'development'
 set :unicorn_env, 'development'
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 set :unicorn_cmd, "bundle exec /usr/bin/unicorn"
+set_default :rbenv_path, "/usr/local/rbenv"
 
 
 set :shared_paths, [
@@ -71,6 +72,8 @@ task :setup do
   queue! %[mkdir -p "#{deploy_to}/shared/pids/"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/pids"]
 end
+
+
 
 desc "Deploys the current version to the server."
 task :deploy do
