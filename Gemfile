@@ -45,6 +45,11 @@ gem 'file_validators'
 gem 'omniauth', '~> 1.3'
 gem 'omniauth-github', '~> 1.1'
 
+# Deployment
+gem 'unicorn'
+gem 'mina'
+gem 'mina-unicorn', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -20,7 +20,6 @@ set :rails_env, 'development'
 set :unicorn_env, 'development'
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 set :unicorn_cmd, "bundle exec /usr/bin/unicorn"
-set_default :rbenv_path, "/usr/local/rbenv"
 
 
 set :shared_paths, [
@@ -28,9 +27,6 @@ set :shared_paths, [
   'config/unicorn.rb',
   'config/application.yml',
   'config/secrets.yml',
-  'config/oneapm.yml',
-  'public/uploads',
-  'db/backup',
   'tmp',
   'log',
 ]
