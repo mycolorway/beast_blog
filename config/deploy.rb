@@ -11,6 +11,8 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
+deploy_to = '/www_space/beast_blog'
+
 set :application_name, 'beast_blog'
 set :domain, '54.222.154.195'
 set :deploy_to, '/www_space/beast_blog'
@@ -85,7 +87,7 @@ task :deploy do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
-    to :launch do
+    on :launch do
       # in_path(fetch(:current_path)) do
       #   command %{mkdir -p tmp/}
       #   command %{touch tmp/restart.txt}
