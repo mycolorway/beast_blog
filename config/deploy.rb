@@ -14,7 +14,7 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 set :application_name, 'beast_blog'
 set :domain, '54.222.154.195'
 set :deploy_to, '/www_space/beast_blog'
-set :repository, 'git@github.com:mycolorway/beast_blog.git'
+set :repository, 'https://github.com/mycolorway/beast_blog.git'
 set :branch, 'master'
 set :rails_env, 'production'
 set :unicorn_env, 'production'
