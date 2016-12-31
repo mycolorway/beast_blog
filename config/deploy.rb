@@ -86,7 +86,7 @@ task :deploy do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
-    on :launch do
+    to :launch do
       # in_path(fetch(:current_path)) do
       #   command %{mkdir -p tmp/}
       #   command %{touch tmp/restart.txt}
