@@ -16,8 +16,8 @@ set :domain, '54.222.154.195'
 set :deploy_to, '/www_space/beast_blog'
 set :repository, 'https://github.com/mycolorway/beast_blog.git'
 set :branch, 'master'
-set :rails_env, 'production'
-set :unicorn_env, 'production'
+set :rails_env, 'development'
+set :unicorn_env, 'development'
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 set :unicorn_cmd, "bundle exec /usr/bin/unicorn"
 
