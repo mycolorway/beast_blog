@@ -12,14 +12,15 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 deploy_to = '/www_space/beast_blog'
+shared_path = '/www_space/beast_blog/shared'
 
 set :application_name, 'beast_blog'
 set :domain, '54.222.154.195'
 set :deploy_to, '/www_space/beast_blog'
 set :repository, 'https://github.com/mycolorway/beast_blog.git'
 set :branch, 'master'
-set :rails_env, 'development'
-set :unicorn_env, 'development'
+set :rails_env, 'production'
+set :unicorn_env, 'production'
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 set :unicorn_cmd, "bundle exec /usr/bin/unicorn"
 
@@ -56,19 +57,19 @@ end
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
   # command %{rbenv install 2.3.0}
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/tmp"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp"]
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/db/backup"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/db/backup"]
-  queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
-  queue! %[touch "#{deploy_to}/#{shared_path}/config/application.yml"]
-  queue! %[touch "#{deploy_to}/#{shared_path}/config/secrets.yml"]
-  queue! %[mkdir -p "#{deploy_to}/shared/pids/"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/pids"]
+  comment %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
+  comment %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
+  comment %[mkdir -p "#{deploy_to}/#{shared_path}/tmp"]
+  comment %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp"]
+  comment %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
+  comment %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
+  comment %[mkdir -p "#{deploy_to}/#{shared_path}/db/backup"]
+  comment %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/db/backup"]
+  comment %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
+  comment %[touch "#{deploy_to}/#{shared_path}/config/application.yml"]
+  comment %[touch "#{deploy_to}/#{shared_path}/config/secrets.yml"]
+  comment %[mkdir -p "#{deploy_to}/shared/pids/"]
+  comment %[chmod g+rx,u+rwx "#{deploy_to}/shared/pids"]
 end
 
 
