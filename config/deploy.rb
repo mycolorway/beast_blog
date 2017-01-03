@@ -39,7 +39,7 @@ set :user, 'root'          # Username in the server to SSH to.
 #   set :forward_agent, true     # SSH forward_agent.
 
 # shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
-set :shared_files, fetch(:shared_files, []).push('config/database.yml')
+set :shared_files, fetch(:shared_paths, []).push('config/database.yml')
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
