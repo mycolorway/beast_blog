@@ -71,5 +71,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Front-End
-gem 'tao_on_rails'
+gem 'tao_on_rails', '~> 0.6.1'
 gem 'simple_form', '~> 3.3.1'

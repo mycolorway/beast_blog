@@ -192,7 +192,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.12)
-    tao_on_rails (0.5.2)
+    tao_on_rails (0.6.1)
       jquery-rails (~> 4.2)
       lodash-rails (~> 4.16)
       rails (~> 5.0)
@@ -249,7 +249,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  tao_on_rails
+  tao_on_rails (~> 0.6.1)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
