@@ -1,0 +1,8 @@
+zh-CN:
+  layouts:
+    header:
+      zhiren: 知人
+      tower: Tower
+      github: Github
+      blog: 文章
+      new_article: 写文章

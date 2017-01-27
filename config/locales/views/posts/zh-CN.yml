@@ -4,11 +4,17 @@ zh-CN:
       login_as_github: 请用github登录后评论
       want_comment: 想说点什么？
       no_comments_yet: 还没有人留言
-      have_some_comments: 说点什么吧..
+      have_some_comments: 写下你的评论...
+      comments_number_html: <span class="comments-count">%{count}</span> 条评论
     comments:
-      more_comments: 更多评论
+      more_comments: 显示更多评论
       loading: 正在加载
       no_more: 没有更多评论了
     new:
       new_post: 新的文章
-
+      post_paper: 发表文章
+    form:
+      title: 标题
+      change_slug: 修改文章地址后缀：%{posts_url}/
+      enter_slug: 请输入链接后缀
+      tags: 标签（英文逗号分隔）

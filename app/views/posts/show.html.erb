@@ -1,37 +1,49 @@
-<beast-post>
-  <article>
+<div class="content">
+  <beast-post>
     <h2 class="title">
-      <%= link_to @post.title, 'javascript:;' %>
+      <%= @post.title %>
     </h2>
-    <div class="content">
+    <div class="info">
+      <div class="created-at"><%= @post.created_at.strftime("%Y/%m/%d") %></div>
+      <div class="tags"><%= @post.tags.map(&:name).join(' · ') %></div>
+    </div>
+    <div class="article-content">
       <%= @post.content.html_safe %>
     </div>
-  </article>
-</beast-post>
+  </beast-post>
 
-<div class="comments-area">
-<% if @comments.any? %>
-  <%= render 'comments', post: @post, comments: @comments %>
-<% else %>
-  <div class="no-comments">
-    <%= t '.no_comments_yet' %>
+  <% if logged_in? %>
+    <beast-comment-input>
+      <div class="author">
+        <img class="avatar" src="<%= current_user.avatar %>" >
+        <span class="name"><%= current_user.name %></span>
+      </div>
+      <beast-form>
+      <%= simple_form_for Comment.new(post: @post), url: post_comments_path(@post),
+        method: 'POST', remote: true do |f| %>
+        <%= f.text_area :content, placeholder: t('.have_some_comments') %>
+        <%= f.button :button, '提交', disabled: true %>
+      <% end %>
+      </beast-form>
+    </beast-comment-input>
+  <% else %>
+    <div class="login-to-comment">
+      <%= t('.want_comment') %>
+      <%= link_to t('.login_as_github'), '/auth/github'%>
+    </div>
+  <% end %>
+
+  <div class="comments">
+  <% if @comments.any? %>
+    <label><%= t('.comments_number_html', count: @comments.size) %></label>
+    <%= render 'comments', post: @post, comments: @comments %>
+  <% else %>
+    <div class="no-comments">
+      <%= t '.no_comments_yet' %>
+    </div>
+  <% end %>
   </div>
-<% end %>
+
 </div>
 
-<% if logged_in? %>
-  <beast-comment-input>
-    <beast-form>
-    <%= simple_form_for Comment.new(post: @post), url: post_comments_path(@post),
-      method: 'POST', remote: true do |f| %>
-      <%= f.text_area :content, placeholder: t('.have_some_comments') %>
-      <%= f.button :button, '提交' %>
-    <% end %>
-    </beast-form>
-  </beast-comment-input>
-<% else %>
-  <div class="login-to-comment">
-    <%= t('.want_comment') %>
-    <%= link_to t('.login_as_github'), '/auth/github'%>
-  </div>
-<% end %>
+</div>

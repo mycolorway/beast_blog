@@ -1,0 +1,29 @@
+@import 'default/base';
+
+posts-index-page {
+  .post-list {
+    margin-bottom: 64px;
+  }
+
+  beast-post-list-item {
+    .title {
+      line-height: 40px;
+      margin-bottom: 8px;
+      a {
+        text-decoration: none;
+        color: $color-text;
+      }
+    }
+    .abstract {
+      color: $color-light-text;
+      line-height: 28px;
+      margin-bottom: 8px;
+    }
+    .info {
+      color: $color-lighter-text;
+      span {
+        margin-right: 4px;
+      }
+    }
+  }
+}

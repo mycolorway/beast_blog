@@ -4,14 +4,14 @@
     <%= render 'layouts/head' %>
   </head>
   <body>
-    <%= render 'layouts/operations' %>
-    <<%= page_id.dasherize %>-page layout="default" class="page">
+    <<%= page_id.dasherize %>-page layout="default" class="page tao-page">
       <%= render 'layouts/header' %>
       <div class="page-main">
         <beast-page-content class="page-content">
           <%= yield %>
         </beast-page-content>
       </div>
+      <%= render 'layouts/footer' %>
     </<%= page_id.dasherize %>-page>
   </body>
 </html>

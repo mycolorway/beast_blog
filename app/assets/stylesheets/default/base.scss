@@ -1,59 +1,16 @@
-
 // fonts
-
 $font-size: 14px;
 $font-size-small: 12px;
 $font-size-big: 16px;
-$font-size-h1: 36px;
-$font-size-h2: 24px;
-$font-size-h3: 18px;
-
 
 // colors
-
-$color-text: #4a4a4a;
+$color-text: #262626;
 $color-light-text: #9b9b9b;
 $color-lighter-text: #cccccc;
-
-$color-success: #55BB33;
-$color-error: #FF7755;
-$color-warn: #FFAA00;
-$color-notice: #2DB7F5;
-
-$color-link: #4499EE;
-$color-link-hover: #3377cc;
-
-$color-border: #dfdfdf;
-
-$color-grey-bg: #f6f6f6;
-$color-blue-bg: #F5F9FF;
-$color-green-bg: #F5FDF3;
-$color-yellow-bg: #FFFCF7;
-$color-red-bg: #FFEEE6;
-
-// z-indexes
-$z-index-content: 0;
-$z-index-layout: 100;
-$z-index-dialog: 200;
-$z-index-popover: 300;
-$z-index-tooltip: 400;
-
-// attendance
-$color-leave: #6688BB ;
-$color-business_trip: $color-success;
-$color-overtime: $color-light-text;
-
-// layouts
-
-$margin-size-1: 6px;
-$margin-size-2: 12px;
-$margin-size-3: 18px;
-$margin-size-4: 30px;
-$margin-size-5: 42px;
-$margin-size-6: 60px;
+$color-main: #FF9C3A;
+$color-border: #F5F5F5;
 
 // Mixins
-
 @mixin truncate-text {
   overflow: hidden;
   white-space: nowrap;

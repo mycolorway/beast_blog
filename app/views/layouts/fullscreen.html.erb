@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <<%= page_id.dasherize %>-page layout="fullscreen" class="page tao-page">
+      <%= yield %>
+    </<%= page_id.dasherize %>-page>
+  </body>
+</html>

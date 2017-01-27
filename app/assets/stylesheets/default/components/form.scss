@@ -1,7 +1,9 @@
-beast-form {
-  display: block;
+@import 'default/base';
+
+form {
   .input {
-    display: flex;
-    flex-direction: column;
+    span.error {
+      color: #FF6152;
+    }
   }
 }

@@ -5,3 +5,11 @@ zh-CN:
         title: 标题
         content: 内容
         slug: 链接后缀
+    errors:
+      models:
+        post:
+          attributes:
+            slug:
+              blank: 文章链接不能为空
+            title:
+              blank: 文章标题不能为空

@@ -1,0 +1,30 @@
+@import 'default/base';
+
+.sidelinks {
+  padding: 40px 0px;
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .block {
+    margin-bottom: 60px;
+  }
+
+  .tags {
+    .tag {
+      color: $color-main;
+      margin-right: 10px;
+    }
+  }
+  .features {
+    a {
+      display: block;
+      color: $color-main;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+  }
+}

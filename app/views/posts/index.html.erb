@@ -1,3 +1,13 @@
-<div class="post-list">
-  <%= render partial: "post", collection: @posts %>
+<div class="content horizontal">
+  <div class="left">
+    <div class="post-list">
+      <%= render partial: "post", collection: @posts %>
+    </div>
+    <div class="pagination-wrapper">
+      <%= paginate @posts %>
+    </div>
+  </div>
+  <div class="right">
+    <%= render 'shared/sidelinks' %>
+  </div>
 </div>

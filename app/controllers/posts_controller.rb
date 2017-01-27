@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.article.order("id DESC")
     respond_to do |format|
-      format.html { @posts = @posts.page(params[:page]) }
+      format.html { @posts = @posts.page(params[:page]).per(30) }
       format.atom
     end
   end
@@ -16,19 +16,14 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    render layout: 'fullscreen'
   end
 
   def edit
   end
 
   def create
-    @post = current_user.posts.new(post_params)
-
-    if @post.save
-      redirect_to post_path(@post.slug), notice: 'Post was successfully created.'
-    else
-      render :new
-    end
+    @post = current_user.posts.create(post_params)
   end
 
   def update
@@ -50,6 +45,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :slug)
+      params.require(:post).permit(:title, :content, :slug, :tag_string)
     end
 end

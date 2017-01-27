@@ -1,0 +1,7 @@
+zh-CN:
+  views:
+    pagination:
+      next: 下一页
+      last: 最后一页
+      previous: 上一页
+      first: 第一页

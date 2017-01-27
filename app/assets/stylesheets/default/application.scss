@@ -14,14 +14,73 @@ body {
   height: 100%;
   background: #ffffff;
   font-size: $font-size;
+  color: $color-text;
 
   & > .page {
     display: block;
-    width: 700px;
     margin: 0 auto;
+  }
+
+  .content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 0 60px 0px;
+    &.horizontal {
+      display: flex;
+      justify-content: space-around;
+      .left {
+        width: 640px;
+      }
+      .right {
+        width: 240px;
+      }
+    }
   }
 }
 
 p {
   line-height: 2.0;
+}
+
+img.avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea,
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=date],
+input[type=time],
+input[type=month],
+input[type=datetime-local] {
+  width: 340px;
+  height: 40px;
+  padding: 8px 10px;
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  border-radius: 2px;
+  font-size: $font-size-big;
+  line-height: 22px;
+  transition: border-color 300ms, box-shadow 300ms;
+  outline: none;
+
+  &[readonly] {
+    color: $color-light-text;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background: #f6f6f6;
+    border-color: #e6e6e6;
+    color: #ccc;
+  }
 }

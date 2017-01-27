@@ -15,6 +15,8 @@ class PostsShowPage extends TaoPage
     $(@).find 'beast-comment-input'
       .get(0)
       .clear()
+    count = $(@).find '.comments .comments-count'
+    count.text(1 + parseInt(count.text()))
 
   addComments: (commentElements)->
     $(@).find '.more-comments'

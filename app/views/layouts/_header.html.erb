@@ -1,14 +1,29 @@
 <beast-header>
-  <div class="logo">
-    <%= image_tag 'https://avatars3.githubusercontent.com/u/530175?v=3&s=200' %>
-    <h3><%= t 'company_name' %></h3>
+  <div class="content">
+    <div class="company">
+      <div class="logo">
+        <%= image_tag image_path('logo.png') %>
+      </div>
+      <div class="company-name">
+        <div class="chinese"><%= t 'company_name' %></div>
+        <div class="english">Mycolorway</div>
+      </div>
+    </div>
+    <div class="links">
+      <div class="menu">
+        <ul>
+          <li><%= link_to t('.blog'), posts_path %></li>
+          <li><%= link_to t('.github'), 'https://github.com/mycolorway' %></li>
+          <li><%= link_to t('.tower'), 'https://tower.im' %></li>
+          <li><%= link_to t('.zhiren'), 'https://zhiren.com' %></li>
+        </ul>
+      </div>
+      <% if logged_in? %>
+      <div class="new-article">
+        <%= link_to t('.new_article'), new_post_path %>
+        <img class="avatar" src="<%= current_user.avatar %>" />
+      </div>
+      <% end %>
+    </div>
   </div>
-  <beast-header-menu>
-    <ul>
-      <li<%= ' class=active' if controller_name == 'posts' %>><%= link_to 'BLOG', posts_path %></li>
-      <li<%= ' class=active' if controller_name == 'archives' %>><%= link_to 'ARCHIVE', archive_path %></li>
-      <li><%= link_to 'GITHUB', 'https://github.com/mycolorway' %></li>
-      <li><%= link_to 'RSS', posts_path(format: :atom) %></li>
-    </ul>
-  </beast-header-menu>
 </beast-header>

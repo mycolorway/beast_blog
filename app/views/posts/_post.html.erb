@@ -5,14 +5,13 @@
         <%= post.title %>
       <% end %>
     </h2>
-    <div class="info">
-      <span class="author"><%= post.author.name %></span>
-      <span class="created-at"><%= post.created_at.strftime("%d %b,%Y") %></span>
-      <span class="category"><%= Post.human_attribute_name("category.#{post.category}") %></span>
-    </div>
     <div class="abstract">
       <%= post.abstract %>
     </div>
-    <%= link_to 'more..', post_path(id: post.slug), class: 'more' %>
+    <div class="info">
+      <span class="created-at"><%= post.created_at.strftime("%Y/%m/%d") %></span>
+      <span class="author"><%= post.author.name %></span>
+      <span class="tags"><%= post.tags.map(&:name).join(' · ') %></span>
+    </div>
   </article>
 </beast-post-list-item>
