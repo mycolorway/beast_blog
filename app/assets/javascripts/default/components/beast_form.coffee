@@ -10,6 +10,10 @@ class Form extends TaoComponent
   _bind: ->
     @form.on 'ajax:beforeSend', => @loading()
     @form.on 'ajax:success', => @restoreButton()
+    @form.on 'blur', '.input', @_clearError
+
+  _clearError: (e)->
+    $(e.currentTarget).find('.error').remove()
 
   loading: ->
     @submit.prop('disabled', true)

@@ -5,7 +5,7 @@
     </h2>
     <div class="info">
       <div class="created-at"><%= @post.created_at.strftime("%Y/%m/%d") %></div>
-      <div class="tags"><%= @post.tags.map(&:name).join(' · ') %></div>
+      <div class="tags"><%= render 'shared/taglist', tags: @post.tags, splitor: ' · ' %></div>
     </div>
     <div class="article-content">
       <%= @post.content.html_safe %>
@@ -43,7 +43,4 @@
     </div>
   <% end %>
   </div>
-
-</div>
-
 </div>

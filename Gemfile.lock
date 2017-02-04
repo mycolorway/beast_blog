@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/makandra/active_type.git
+  revision: 46f1245f02166c3d6b08c58bbc60309921ff56f5
+  branch: master
+  specs:
+    active_type (0.6.2)
+      activerecord (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -223,6 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_type!
   byebug
   carrierwave (>= 1.0.0.rc, < 2.0)
   coffee-rails (~> 4.2)

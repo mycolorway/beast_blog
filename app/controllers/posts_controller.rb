@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.article.order("id DESC")
+    load_posts
     respond_to do |format|
       format.html { @posts = @posts.page(params[:page]).per(30) }
       format.atom
@@ -46,5 +46,12 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :content, :slug, :tag_string)
+    end
+
+    def load_posts
+      @posts = Post.article.order("id DESC")
+      if params[:tag].present?
+        @posts = @posts.tag_with(params[:tag])
+      end
     end
 end

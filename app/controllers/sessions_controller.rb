@@ -1,17 +1,14 @@
 class SessionsController < ApplicationController
 
   def new
+    build_session
+    render layout: 'fullscreen'
   end
 
   def create
-    auth_user
-
-    if @user
-      log_in @user
-      redirect_to root_path
-    else
-      render new_session_path
-    end
+    build_session
+    @session.save
+    log_in @session.user if @session.errors.blank?
   end
 
   def destroy
@@ -20,11 +17,12 @@ class SessionsController < ApplicationController
 
   private
 
-    def auth_user
-      if request.env['omniauth.auth'].blank?
-        @user = Author.authenticate params[:email], params[:password]
-      else
-        @user = User.authenticate request.env['omniauth.auth']
-      end
+    def build_session
+      @session ||= Session.new(omniauth: request.env['omniauth.auth'].present?)
+      @session.attributes = session_params
+    end
+
+    def session_params
+      params.fetch(:session, {}).permit [:email, :password]
     end
 end

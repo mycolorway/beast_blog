@@ -70,6 +70,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'active_type', github: 'makandra/active_type', branch: :master
+
 # Front-End
 gem 'tao_on_rails', '~> 0.6.1'
 gem 'simple_form', '~> 3.3.1'

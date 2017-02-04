@@ -1,14 +1,19 @@
 @import 'default/base';
 
-posts-index-page {
+posts-index-page beast-page-content {
+  .content {
+    padding-top: 40px;
+  }
   .post-list {
     margin-bottom: 64px;
   }
 
   beast-post-list-item {
+    display: block;
     .title {
       line-height: 40px;
       margin-bottom: 8px;
+      font-size: 20px;
       a {
         text-decoration: none;
         color: $color-text;
@@ -20,9 +25,19 @@ posts-index-page {
       margin-bottom: 8px;
     }
     .info {
+      font-size: 12px;
       color: $color-lighter-text;
       span {
         margin-right: 4px;
+      }
+      .tags {
+        color: $color-main;
+        a {
+          color: $color-main;
+        }
+        .tag {
+          margin: 0px;
+        }
       }
     }
   }

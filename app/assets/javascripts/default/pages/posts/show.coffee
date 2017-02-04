@@ -23,8 +23,9 @@ class PostsShowPage extends TaoPage
       .replaceWith commentElements
 
   noMoreComments: ->
-    $moreButton = $(@).find '.more-comments a'
+    $moreButton = $(@).find '.more-comments'
     $moreButton.text $moreButton.data('no-more')
       .replaceWith $moreButton.clone()
+      .attr 'disabled', true
 
 TaoPage.register PostsShowPage

@@ -15,7 +15,9 @@
 
   .tags {
     .tag {
-      color: $color-main;
+      a {
+        color: $color-main;
+      }
       margin-right: 10px;
     }
   }

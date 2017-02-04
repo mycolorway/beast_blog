@@ -1,0 +1,8 @@
+zh-CN:
+  sessions:
+    modalview:
+      author_login: 作者登录
+    form:
+      login: 登录
+      email: 请输入邮箱地址
+      password: 请输入密码

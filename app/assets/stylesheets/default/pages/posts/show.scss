@@ -1,6 +1,6 @@
 @import 'default/base';
 
-posts-show-page {
+posts-show-page beast-page-content {
   .content {
     padding: 60px 0px;
     width: 640px;
@@ -17,7 +17,7 @@ posts-show-page {
       .created-at {
         color: $color-lighter-text;
       }
-      .tags {
+      .tags, .tags a {
         color: $color-main;
       }
     }
@@ -100,21 +100,15 @@ posts-show-page {
         justify-content: center;
         border-radius: 2px;
         cursor: pointer;
-        a {
-          text-decoration: none;
-          color: $color-light-text;
-        }
+        text-decoration: none;
+        color: $color-light-text;
         &:hover {
           background: #E6E6E6;
-          a {
-            color: #666666;
-          }
+          color: #666666;
         }
         &:active {
           background: #E6E6E6;
-          a {
-            color: $color-light-text;
-          }
+          color: $color-light-text;
         }
       }
       .no-comments {
