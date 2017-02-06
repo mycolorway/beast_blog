@@ -38,7 +38,7 @@ gem 'figaro', '~> 1.1'
 
 # Photo
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
-gem 'rmagick', '~> 2.15'
+gem 'mini_magick', '~> 4.5'
 gem 'mime-types', '~> 3.1'
 gem 'file_validators'
 
