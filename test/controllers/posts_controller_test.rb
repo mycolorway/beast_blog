@@ -21,10 +21,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     slug = random_string
 
     assert_difference('Post.count') do
-      post posts_url, params: { post: { content: slug, slug: slug, title: slug } }
+      post posts_url, params: { post: { content: slug, slug: slug, title: slug } }, xhr: true
     end
 
-    assert_redirected_to post_url(slug)
   end
 
   test "should show post" do
