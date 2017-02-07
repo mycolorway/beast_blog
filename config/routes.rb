@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create]
   end
 
-  #feed
+  # feed
   get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }
   get '/tag/:tag', to: 'posts#index', as: :tag
 end
