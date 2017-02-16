@@ -1,0 +1,10 @@
+@import 'desktop/_base';
+
+header {
+  height: 300px;
+  display: block;
+  background-image: image-url('banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}

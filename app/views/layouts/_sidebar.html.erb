@@ -1,0 +1,27 @@
+<div class="sidebar">
+  <section class="tags">
+    <h3><%= t('.taggings') %></h3>
+    <ul class="tag-list">
+      <% Tag.first(20).each do |tag| %>
+      <li>
+        <%= link_to tag.name, tag_path(tag: tag.name), class: 'tag' %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="features">
+    <h3><%= t('.features') %></h3>
+    <ul class="feature-links">
+      <li>
+        <%= link_to t('.archive'), '#' %>
+      </li>
+      <li>
+        <%= link_to t('.rss'), '#' %>
+      </li>
+      <li>
+        <%= link_to t('.login'), login_path, remote: true %>
+      </li>
+    </ul>
+  </section>
+</div>

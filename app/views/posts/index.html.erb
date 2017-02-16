@@ -1,13 +1,14 @@
-<div class="content horizontal">
-  <div class="left">
-    <div class="post-list">
-      <%= render partial: "post", collection: @posts %>
-    </div>
-    <div class="pagination-wrapper">
-      <%= paginate @posts %>
-    </div>
-  </div>
-  <div class="right">
-    <%= render 'shared/sidelinks' %>
-  </div>
+<div class="posts">
+  <% if @posts.any? %>
+    <%= render partial: "post", collection: @posts %>
+  <% else %>
+    <p class="no-post">
+      <%= t '.no_post' %>
+    </p>
+    <% if logged_in? %>
+      <%= link_to t('.create_first_post'), new_post_path, class: 'link-new-post' %>
+    <% end %>
+  <% end %>
 </div>
+
+<%= paginate @posts %>

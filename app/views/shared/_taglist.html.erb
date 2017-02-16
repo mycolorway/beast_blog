@@ -1,6 +1,0 @@
-<% splitor ||= ' ' %>
-<% tags ||= [] %>
-
-<%= tags.map do |tag| %>
-  <% "<span class='tag'>#{link_to(tag.name, tag_path(tag: tag.name))}</span>" %>
-<% end.join(splitor).html_safe %>

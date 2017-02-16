@@ -27,4 +27,4 @@ public/uploads
 tags
 db/schema.rb
 
-
+.DS_Store

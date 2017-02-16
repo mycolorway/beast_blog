@@ -1,5 +1,8 @@
 zh-CN:
   posts:
+    index:
+      no_post: 作者很懒，还没有写过文章
+      create_first_post: 创建第一篇文章
     show:
       login_as_github: 请用github登录后评论
       want_comment: 想说点什么？

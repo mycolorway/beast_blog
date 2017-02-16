@@ -1,29 +1,30 @@
-<beast-header>
-  <div class="content">
-    <div class="company">
-      <div class="logo">
-        <%= image_tag image_path('logo.png') %>
-      </div>
-      <div class="company-name">
-        <div class="chinese"><%= t 'company_name' %></div>
-        <div class="english">Mycolorway</div>
-      </div>
+<header>
+  <div class="title">
+    <div class="logo">
+      <%= image_tag image_path('logo.png') %>
     </div>
-    <div class="links">
-      <div class="menu">
-        <ul>
-          <li><%= link_to t('.blog'), posts_path %></li>
-          <li><%= link_to t('.github'), 'https://github.com/mycolorway' %></li>
-          <li><%= link_to t('.tower'), 'https://tower.im' %></li>
-          <li><%= link_to t('.zhiren'), 'https://zhiren.com' %></li>
-        </ul>
-      </div>
-      <% if logged_in? %>
-      <div class="new-article">
-        <%= link_to t('.new_article'), new_post_path %>
-        <img class="avatar" src="<%= current_user.avatar %>" />
-      </div>
-      <% end %>
-    </div>
+    <h1 class="name">彩程设计</h1>
+    <div class="desc">Mycolorway</div>
   </div>
-</beast-header>
+
+  <nav>
+    <ul>
+      <ul>
+        <li><%= link_to t('.posts'), posts_path %></li>
+        <li><%= link_to t('.github'), 'https://github.com/mycolorway' %></li>
+        <li><%= link_to t('.tower'), 'https://tower.im' %></li>
+        <li><%= link_to t('.zhiren'), 'https://zhiren.com' %></li>
+      </ul>
+    </ul>
+
+    <% if logged_in? %>
+    <div class="user-info">
+      <%= link_to new_post_path, class: 'link-new-post' do %>
+        <%= icon_tag :edit %>
+        <%= t('.new_article') %>
+      <% end %>
+      <%= render_avatar current_user %>
+    </div>
+    <% end %>
+  </nav>
+</header>

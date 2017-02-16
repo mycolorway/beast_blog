@@ -1,17 +1,15 @@
-<beast-post-list-item>
-  <article>
-    <h2 class="title">
-      <%= link_to post_path(id: post.slug) do %>
-        <%= post.title %>
-      <% end %>
-    </h2>
-    <div class="abstract">
-      <%= post.abstract %>
-    </div>
-    <div class="info">
-      <span class="created-at"><%= post.created_at.strftime("%Y/%m/%d") %></span>
-      <span class="author"><%= post.author.name %></span>
-      <span class="tags"><%= render 'shared/taglist', splitor: ' · ', tags: post.tags %></span>
-    </div>
-  </article>
-</beast-post-list-item>
+<article class="post">
+  <h2 class="title">
+    <%= link_to post_path(id: post.slug) do %>
+      <%= post.title %>
+    <% end %>
+  </h2>
+  <div class="abstract">
+    <%= post.abstract %>
+  </div>
+  <div class="info">
+    <span class="created-at"><%= post.created_at.strftime("%Y/%m/%d") %></span>
+    <span class="author"><%= post.author.name %></span>
+    <span class="tags"><%= render 'shared/taglist', splitor: ' · ', tags: post.tags %></span>
+  </div>
+</article>
