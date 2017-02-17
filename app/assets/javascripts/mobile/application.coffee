@@ -5,6 +5,5 @@
 
 class MobileApplication extends TaoApplication
 
-window.app = new MobileApplication()
 window.Beast = {}
-Beast.app = window.app
+Beast.app = window.app = new MobileApplication()

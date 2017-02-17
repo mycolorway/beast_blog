@@ -1,10 +1,19 @@
 
 // colors
+$color-ui: #FF9C3A;
+
 $color-text: #262626;
 $color-light-text: #9b9b9b;
 $color-lighter-text: #cccccc;
-$color-main: #FF9C3A;
 $color-border: #F5F5F5;
+
+$color-link: $color-ui;
+$color-link-hover: #DB7D20;
+
+$color-success: #55BB33;
+$color-error: #FF6152;
+$color-warn: #FFAA00;
+
 
 // Mixins
 @mixin truncate-text {

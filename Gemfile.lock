@@ -8,10 +8,10 @@ GIT
 
 GIT
   remote: git://github.com/mycolorway/tao_on_rails.git
-  revision: d416b90fe5466baf6a4fa167312925a2708c55df
+  revision: 6c784c47eeb013ee2cf9a71f145506c2165711ed
   branch: master
   specs:
-    tao_on_rails (0.6.4)
+    tao_on_rails (0.6.5)
       jquery-rails (~> 4.2)
       lodash-rails (~> 4.16)
       rails (~> 5.0, >= 5.0.1)
@@ -58,6 +58,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    autoprefixer-rails (6.4.1.1)
+      execjs
     builder (3.2.3)
     byebug (9.0.6)
     carrierwave (1.0.0)
@@ -238,6 +240,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_type!
+  autoprefixer-rails (~> 6.4.0)
   byebug
   carrierwave (>= 1.0.0.rc, < 2.0)
   coffee-rails (~> 4.2)

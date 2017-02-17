@@ -1,0 +1,19 @@
+@import 'desktop/_base';
+
+.tao-page[layout="default"] {
+
+  .page-content {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 64px 160px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 500px;
+
+    .main {
+      width: 640px;
+      flex: 0 0 auto;
+    }
+  }
+
+}

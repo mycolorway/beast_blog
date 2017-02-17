@@ -6,18 +6,22 @@ button, .button {
   justify-content: center;
   padding: 0 10px;
   min-width: 64px;
-  height: 32px;
+  height: 40px;
   color: white;
   background: #FF9D3A;
   border-radius: 2px;
   border: none;
   outline: none;
+  cursor: pointer;
+
   &:hover {
     background: #FFAE5E;
   }
+
   &:active {
     background: #DD7B00;
   }
+  
   &[disabled], .disabled {
     background: #F5F5F5;
     border-color: #E6E6E6;

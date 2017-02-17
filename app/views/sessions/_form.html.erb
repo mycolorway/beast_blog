@@ -1,14 +1,7 @@
-<beast-form class="center">
-<%= simple_form_for @session, path: sessions_path, remote: true do |f| %>
-  <% if @session.errors[:custom]&.present? %>
-    <div class="block-errors">
-      <% @session.errors[:custom].each do |message| %>
-        <span><%= message %></span>
-      <% end %>
-    </div>
+<tao-form class="login-form">
+  <%= simple_form_for session, url: sessions_path, remote: true do |f| %>
+    <%= f.input :email, label: false, placeholder: true %>
+    <%= f.input :password, label: false, placeholder: true %>
+    <%= f.button :button, t('.login') %>
   <% end %>
-  <%= f.input :email, label: false, placeholder: t('.email') %>
-  <%= f.input :password, label: false, placeholder: t('.password') %>
-  <%= f.button :button, t('.login') %>
-<% end %>
-</beast-form>
+</tao-form>

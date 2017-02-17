@@ -1,11 +1,10 @@
 @import 'desktop/_base';
 
-.footer {
+footer {
   height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $color-lighter-text;
+  line-height: 80px;
+  text-align: center;
+  border-top: 1px solid $color-border;
   font-size: $font-size-small;
-  border-top: 1px solid #F5F5F5;
+  color: $color-lighter-text;
 }

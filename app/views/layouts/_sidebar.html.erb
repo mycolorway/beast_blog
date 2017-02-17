@@ -1,4 +1,5 @@
 <div class="sidebar">
+  <% if Tag.any? %>
   <section class="tags">
     <h3><%= t('.taggings') %></h3>
     <ul class="tag-list">
@@ -9,6 +10,7 @@
       <% end %>
     </ul>
   </section>
+  <% end %>
 
   <section class="features">
     <h3><%= t('.features') %></h3>
@@ -20,7 +22,11 @@
         <%= link_to t('.rss'), '#' %>
       </li>
       <li>
-        <%= link_to t('.login'), login_path, remote: true %>
+        <% if logged_in? %>
+          <%= link_to t('.logout'), logout_path %>
+        <% else %>
+          <%= link_to t('.login'), login_path %>
+        <% end %>
       </li>
     </ul>
   </section>

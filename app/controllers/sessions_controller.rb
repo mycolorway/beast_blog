@@ -2,13 +2,15 @@ class SessionsController < ApplicationController
 
   def new
     build_session
-    render layout: 'fullscreen'
+    render layout: 'center'
   end
 
   def create
     build_session
-    @session.save
-    log_in @session.user if @session.errors.blank?
+    if @session.save
+      log_in @session.user
+      @redirect_url = session[:return_to] || posts_path
+    end
   end
 
   def destroy

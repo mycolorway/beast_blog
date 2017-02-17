@@ -1,30 +1,28 @@
 <header>
-  <div class="title">
-    <div class="logo">
-      <%= image_tag image_path('logo.png') %>
+  <div class="header-inner">
+    <div class="title">
+      <%= image_tag 'logo.png', class: 'logo' %>
+      <h1 class="name"><%= ENV['site_name'] %></h1>
+      <div class="desc"><%= ENV['site_desc'] %></div>
     </div>
-    <h1 class="name">彩程设计</h1>
-    <div class="desc">Mycolorway</div>
-  </div>
 
-  <nav>
-    <ul>
-      <ul>
+    <nav>
+      <ul class="menu">
         <li><%= link_to t('.posts'), posts_path %></li>
         <li><%= link_to t('.github'), 'https://github.com/mycolorway' %></li>
         <li><%= link_to t('.tower'), 'https://tower.im' %></li>
         <li><%= link_to t('.zhiren'), 'https://zhiren.com' %></li>
       </ul>
-    </ul>
 
-    <% if logged_in? %>
-    <div class="user-info">
-      <%= link_to new_post_path, class: 'link-new-post' do %>
-        <%= icon_tag :edit %>
-        <%= t('.new_article') %>
+      <% if logged_in? %>
+      <div class="user-info">
+        <%= link_to new_post_path, class: 'link-new-post' do %>
+          <%= icon_tag :edit %>
+          <%= t('.new_article') %>
+        <% end %>
+        <%= render_avatar current_user %>
+      </div>
       <% end %>
-      <%= render_avatar current_user %>
-    </div>
-    <% end %>
-  </nav>
+    </nav>
+  </div>
 </header>

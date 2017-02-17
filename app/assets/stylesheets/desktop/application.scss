@@ -10,27 +10,6 @@ body {
   background: #ffffff;
   font-size: $font-size;
   color: $color-text;
-
-  & > .page {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .content {
-    width: 960px;
-    margin: 0 auto;
-    padding: 0 0 60px 0px;
-    &.horizontal {
-      display: flex;
-      justify-content: space-between;
-      .left {
-        width: 640px;
-      }
-      .right {
-        width: 240px;
-      }
-    }
-  }
 }
 
 p {
@@ -41,8 +20,4 @@ img.avatar {
   height: 32px;
   width: 32px;
   border-radius: 16px;
-}
-
-a {
-  text-decoration: none;
 }

@@ -5,6 +5,5 @@
 
 class DesktopApplication extends TaoApplication
 
-window.app = new DesktopApplication()
 window.Beast = {}
-Beast.app = window.app
+Beast.app = window.app = new DesktopApplication()

@@ -1,5 +1,6 @@
-<% if @session.errors.present? %>
-$(currentPage).find("#<%= dom_id(@session) %>").replaceWith('<%= render "form", session: @session %>')
+<% if @session.errors.any? %>
+currentPage.jq.find(".login-form")
+  .replaceWith('<%= render "form", session: @session %>')
 <% else %>
-Turbolinks.visit window.location
+Turbolinks.visit '<%= @redirect_url %>'
 <% end %>
