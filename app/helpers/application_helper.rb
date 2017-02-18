@@ -5,23 +5,21 @@ module ApplicationHelper
     page_title
   end
 
-  def render_avatar(user, width: 48, height: 48)
-    if user.avatar.blank?
-      abbr = (user.name =~ /^\w/) ? user.name[0].upcase : user.name[-2, 2]
-      content_tag(
-        :div, abbr,
-        class: 'avatar',
-        style: "width: #{width}px; height: #{height}px; line-height: #{height}px; font-size: #{width / 2}px;"
-      )
-    else
-      image_tag(
-        user.avatar,
-        class: "avatar",
-        width: width,
-        height: height,
-        alt: user.name
-      )
-    end
+  def render_avatar(user, width: 32, height: 32)
+    image_tag(
+      user.avatar.presence || 'avatar.png',
+      class: "avatar",
+      width: width,
+      height: height,
+      alt: user.name
+    )
+
+    # abbr = (user.name =~ /^\w/) ? user.name[0].upcase : user.name[-2, 2]
+    # content_tag(
+    #   :div, abbr,
+    #   class: 'avatar',
+    #   style: "width: #{width}px; height: #{height}px; line-height: #{height}px; font-size: #{width / 2}px;"
+    # )
   end
 
 end

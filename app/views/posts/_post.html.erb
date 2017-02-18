@@ -5,11 +5,15 @@
     <% end %>
   </h2>
   <div class="abstract">
-    <%= post.abstract %>
+    <%= post.abstract.html_safe %>
   </div>
   <div class="info">
     <span class="created-at"><%= post.created_at.strftime("%Y/%m/%d") %></span>
     <span class="author"><%= post.author.name %></span>
-    <span class="tags"><%= render 'shared/taglist', splitor: ' · ', tags: post.tags %></span>
+    <div class="tags">
+      <%= post.tags.map do |tag| %>
+        <% render tag %>
+      <% end.join('·').html_safe %>
+    </div>
   </div>
 </article>

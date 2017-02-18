@@ -1,6 +1,6 @@
 <div class="posts">
   <% if @posts.any? %>
-    <%= render partial: "post", collection: @posts %>
+    <%= render @posts %>
   <% else %>
     <p class="no-post">
       <%= t '.no_post' %>

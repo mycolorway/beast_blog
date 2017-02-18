@@ -1,46 +1,51 @@
-<div class="content">
-  <beast-post>
-    <h2 class="title">
-      <%= @post.title %>
-    </h2>
-    <div class="info">
-      <div class="created-at"><%= @post.created_at.strftime("%Y/%m/%d") %></div>
-      <div class="tags"><%= render 'shared/taglist', tags: @post.tags, splitor: ' · ' %></div>
-    </div>
-    <div class="article-content">
-      <%= @post.content.html_safe %>
-    </div>
-  </beast-post>
+<article class="post">
+  <h2 class="title">
+    <%= @post.title %>
+  </h2>
+  <div class="info">
+    <div class="created-at"><%= @post.created_at.strftime("%Y/%m/%d") %></div>
+    <div class="tags"><%= render @post.tags %></div>
+  </div>
+
+  <div class="article-content editor-style">
+    <%= @post.content.html_safe %>
+  </div>
 
   <% if logged_in? %>
-    <beast-comment-input>
-      <div class="author">
-        <img class="avatar" src="<%= current_user.avatar %>" >
-        <span class="name"><%= current_user.name %></span>
-      </div>
-      <beast-form>
-      <%= simple_form_for Comment.new(post: @post), url: post_comments_path(@post),
-        method: 'POST', remote: true do |f| %>
-        <%= f.text_area :content, placeholder: t('.have_some_comments') %>
-        <%= f.button :button, '提交', disabled: true %>
-      <% end %>
-      </beast-form>
-    </beast-comment-input>
-  <% else %>
-    <div class="login-to-comment">
-      <%= t('.want_comment') %>
-      <%= link_to t('.login_as_github'), '/auth/github'%>
-    </div>
-  <% end %>
-
-  <div class="comments">
-  <% if @comments.any? %>
-    <label><%= t('.comments_number_html', count: @comments.size) %></label>
-    <%= render 'comments', post: @post, comments: @comments %>
-  <% else %>
-    <div class="no-comments">
-      <%= t '.no_comments_yet' %>
-    </div>
-  <% end %>
+  <div class="actions">
+    <%= link_to t('.edit_post'), edit_post_path(@post), class: 'link-edit-post' %>
+    <%= link_to t('.delete_post'), post_path(@post), class: 'link-edit-post warn', method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true %>
   </div>
+  <% end %>
+</article>
+
+<% if logged_in? %>
+  <beast-comment-input>
+    <div class="current-user">
+      <%= render_avatar current_user %>
+      <span class="name"><%= current_user.name %></span>
+    </div>
+    <tao-form>
+    <%= simple_form_for Comment.new(post: @post), url: post_comments_path(@post), remote: true do |f| %>
+      <%= f.input :content, placeholder: true, label: false %>
+      <%= f.button :button, t('.submit'), disabled: true %>
+    <% end %>
+    </tao-form>
+  </beast-comment-input>
+<% else %>
+  <div class="login-to-comment">
+    <%= image_tag('avatar.png', class: "avatar") %>
+    <%= t('.login_before_comment', link: link_to(t('.login_as_github'), '/auth/github', class: 'link-login')) %>
+  </div>
+<% end %>
+
+<div class="comments">
+<% if @comments.any? %>
+  <h3><%= t('.comments_title', count: @comments.size) %></h3>
+  <%= render 'comments/list', comments: @comments, post: @post %>
+<% else %>
+  <div class="no-comments">
+    <%= t '.no_comments' %>
+  </div>
+<% end %>
 </div>

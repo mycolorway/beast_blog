@@ -4,20 +4,30 @@ zh-CN:
       no_post: 作者很懒，还没有写过文章
       create_first_post: 创建第一篇文章
     show:
-      login_as_github: 请用github登录后评论
-      want_comment: 想说点什么？
-      no_comments_yet: 还没有人留言
-      have_some_comments: 写下你的评论...
-      comments_number_html: <span class="comments-count">%{count}</span> 条评论
+      edit_post: 编辑文章
+      delete_post: 删除文章
+      confirm_delete_post: 确定要删除这篇文章吗？不能反悔哦！
+      submit: 提交
+      login_before_comment: '%{link}后发表评论'
+      login_as_github: 通过github登录
+      comments_title_html: <span class="count">%{count}</span> 条评论
+      no_comments: 还没有人发表评论
     comments:
       more_comments: 显示更多评论
       loading: 正在加载
       no_more: 没有更多评论了
-    new:
-      new_post: 新的文章
-      post_paper: 发表文章
+    header:
+      return: 返回
+      save_post: 保存文章
+      publish_post: 发布文章
     form:
-      title: 标题
-      change_slug: 修改文章地址后缀：%{posts_url}/
-      enter_slug: 请输入链接后缀
-      tags: 标签（英文逗号分隔）
+      slug_label_html: <b>文章地址后缀：</b>%{path}
+      tag_string_label_html: <b>文章标签：</b>
+
+  simple_form:
+    placeholders:
+      post:
+        title: 标题
+        content: 输入文章内容
+        slug: post-name
+        tag_string: 标签一, 标签二

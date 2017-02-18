@@ -11,6 +11,7 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 site_name: '彩程工程师博客'
+site_desc: 'Mycolorway'
 
 github_client_id: d78181e1ec709f32d844
 github_client_secret: 7fd79b37dd8a4423c598b9f6ae6d4fe358af11dc

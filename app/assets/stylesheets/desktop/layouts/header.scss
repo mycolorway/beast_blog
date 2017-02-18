@@ -1,6 +1,7 @@
 @import 'desktop/_base';
 
-header {
+.tao-page[layout="default"] header {
+  min-width: 1280px;
   height: 300px;
   display: block;
   background-image: image-url('banner.jpg');
@@ -29,7 +30,7 @@ header {
     }
 
     .name {
-      margin: 1px 0 0 0;
+      margin: 3px 0 0 0;
       font-size: 21px;
       color: #ffffff;
     }
@@ -70,17 +71,25 @@ header {
     .user-info {
       flex: 0 0 auto;
       display: flex;
+      align-items: center;
 
       .link-new-post {
         color: #ffffff;
 
         .icon-edit {
+          width: 14px;
+          height: 14px;
+          margin: 0 8px 0 0;
           fill: #ffffff;
         }
 
         &:hover {
           opacity: 0.65;
         }
+      }
+
+      .avatar {
+        margin: 0 0 0 12px;
       }
     }
   }

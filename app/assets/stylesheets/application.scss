@@ -15,8 +15,21 @@ a {
   text-decoration: none;
   color: $color-link;
 
+  &.warn {
+    color: $color-error;
+  }
+
   &:hover,
   &:active {
     color: $color-link-hover;
   }
+}
+
+.avatar {
+  display: inline-block;
+  border-radius: 100%;
+  background: #cccccc;
+  color: #ffffff;
+  overflow: hidden;
+  text-align: center;
 }

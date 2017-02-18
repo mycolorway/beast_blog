@@ -16,6 +16,7 @@ class Post < ApplicationRecord
   scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
 
   def add_tags *tag_names
+    tags.clear
     tag_names.each do |tag_name|
       tags << Tag.find_or_initialize_by(name: tag_name)
     end
@@ -44,7 +45,7 @@ class Post < ApplicationRecord
   end
 
   def tag_string
-    @tag_string ||= tags.map(&:name).join(",")
+    @tag_string ||= tags.map(&:name).join(", ")
   end
 
   private

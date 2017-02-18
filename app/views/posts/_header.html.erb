@@ -1,0 +1,11 @@
+<header>
+  <div class="left">
+    <%= link_to 'javascript:history.back()', class: 'link-return', title: t('.return') do %>
+      <%= icon_tag :close %>
+    <% end %>
+  </div>
+  <div class="right">
+    <%= render_avatar current_user %>
+    <%= f.button :submit, t(post.new_record? ? '.publish_post' : '.save_post'), class: 'button-submit' %>
+  </div>
+</header>

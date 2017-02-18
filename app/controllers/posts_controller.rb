@@ -16,10 +16,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    render layout: 'fullscreen'
+    render layout: 'empty'
   end
 
   def edit
+    render layout: 'empty'
   end
 
   def create
@@ -27,16 +28,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to post_path(@post.slug), notice: 'Post was successfully updated.'
-    else
-      render :edit
-    end
+    @post.update(post_params)
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
   private

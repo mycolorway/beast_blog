@@ -2,13 +2,9 @@
   <% if Tag.any? %>
   <section class="tags">
     <h3><%= t('.taggings') %></h3>
-    <ul class="tag-list">
-      <% Tag.first(20).each do |tag| %>
-      <li>
-        <%= link_to tag.name, tag_path(tag: tag.name), class: 'tag' %>
-      </li>
-      <% end %>
-    </ul>
+    <div class="tag-list">
+      <%= render Tag.first(20) %>
+    </div>
   </section>
   <% end %>
 
