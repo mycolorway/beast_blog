@@ -2,50 +2,51 @@
   <h2 class="title">
     <%= @post.title %>
   </h2>
-  <div class="info">
-    <div class="created-at"><%= @post.created_at.strftime("%Y/%m/%d") %></div>
-    <div class="tags"><%= render @post.tags %></div>
+  <div class="meta">
+    <span class="created-at"><%= l @post.created_at.to_date, format: :short %></span>
+    <span class="author"><%= @post.author.name %></span>
   </div>
+  <div class="tags"><%= render @post.tags %></div>
 
   <div class="article-content editor-style">
     <%= @post.content.html_safe %>
   </div>
 
-  <% if logged_in? %>
-  <div class="actions">
-    <%= link_to t('.edit_post'), edit_post_path(@post), class: 'link-edit-post' %>
-    <%= link_to t('.delete_post'), post_path(@post), class: 'link-edit-post warn', method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true %>
-  </div>
-  <% end %>
+  <ul class="operations">
+    <!-- <li>
+      <div class="label"><%= t '.share_post' %></div>
+      <div class="links"></div>
+    </li> -->
+    <% if logged_in? && current_user.author? %>
+    <li>
+      <div class="label"><%= t '.manage_post' %></div>
+      <div class="links">
+        <%= link_to t('.edit_post'), edit_post_path(@post), class: 'link-edit-post' %>
+        <%= link_to t('.delete_post'), post_path(@post), class: 'link-edit-post warn', method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 </article>
 
 <% if logged_in? %>
   <beast-comment-input>
-    <div class="current-user">
+    <div class="user">
       <%= render_avatar current_user %>
       <span class="name"><%= current_user.name %></span>
     </div>
-    <tao-form>
-    <%= simple_form_for Comment.new(post: @post), url: post_comments_path(@post), remote: true do |f| %>
-      <%= f.input :content, placeholder: true, label: false %>
-      <%= f.button :button, t('.submit'), disabled: true %>
-    <% end %>
-    </tao-form>
+    <%= render 'comments/form', post: @post %>
   </beast-comment-input>
 <% else %>
   <div class="login-to-comment">
     <%= image_tag('avatar.png', class: "avatar") %>
-    <%= t('.login_before_comment', link: link_to(t('.login_as_github'), '/auth/github', class: 'link-login')) %>
+    <%= t('.login_before_comment', link: link_to(t('.login_as_github'), '/auth/github', class: 'link-login')).html_safe %>
   </div>
 <% end %>
 
-<div class="comments">
-<% if @comments.any? %>
-  <h3><%= t('.comments_title', count: @comments.size) %></h3>
+<beast-comment-list empty="<%= @comments.blank? %>">
+  <h3><%= t('.comments_title_html', count: @comments.size) %></h3>
+  <% if @comments.any? %>
   <%= render 'comments/list', comments: @comments, post: @post %>
-<% else %>
-  <div class="no-comments">
-    <%= t '.no_comments' %>
-  </div>
-<% end %>
-</div>
+  <% end %>
+</beast-comment-list>

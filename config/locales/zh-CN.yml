@@ -9,12 +9,14 @@ zh-CN:
     formats:
       default: "%Y-%m-%d"
       long: '%Y年%-m月%-d日'
-      short: '%m-%d'
+      short: '%Y/%m/%d'
 
   time:
+    pm: 下午
+    am: 上午
     formats:
       default: '%Y年%-m月%-d日 %P%H点%M分'
       long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
+      short: "%Y/%m/%d %H:%M"
       time_only: '%P %H点%M分'
       time_only_short: '%H:%M'

@@ -58,7 +58,7 @@ form {
 
     .input-content {
       min-height: 40px;
-      max-width: 600px;
+      // max-width: 600px;
 
       .checkbox, .radio {
         height: 40px;
@@ -137,7 +137,6 @@ form {
 
         .input-field {
           border-color: $color-error;
-          box-shadow: 0px 0px 4px 0px rgba(#FF7755, 0.5);
         }
       }
 
@@ -268,19 +267,18 @@ input[type=datetime-local] {
   height: 40px;
   padding: 8px 10px;
   background: #FFFFFF;
-  border: 1px solid #DFDFDF;
+  border: 1px solid $color-border;
   border-radius: 2px;
   font-size: $font-size;
   line-height: 22px;
   transition: border-color 300ms, box-shadow 300ms;
 
   &:hover {
-    border-color: #ACC6E4;
+    border-color: #cccccc;
   }
 
   &:focus {
-    border-color: #ACC6E4;
-    box-shadow: 0px 0px 4px 0px rgba(#4A90E2, 0.5);
+    border-color: #cccccc;
     outline: none;
   }
 
@@ -312,18 +310,17 @@ select {
   height: 40px;
   border-radius: 2px;
   background: #FFFFFF;
-  border: 1px #DFDFDF solid;
+  border: 1px solid $color-border;
   padding: 0 40px 0 10px;
   appearance: none;
   transition: 300ms border;
 
   &:hover {
-    border-color: #ACC6E4;
+    border-color: #cccccc;
   }
 
   &:focus {
-    border-color: #ACC6E4;
-    box-shadow: 0px 0px 4px 0px rgba(#4A90E2, 0.5);
+    border-color: #cccccc;
   }
 }
 

@@ -1,4 +1,108 @@
 @import 'desktop/_base';
 
 posts-show-page {
+
+  &.tao-page[layout="default"] .page-content {
+    padding: 96px 0;
+    justify-content: center;
+
+    .sidebar {
+      display: none;
+    }
+  }
+
+
+  .post {
+    border-bottom: 1px solid $color-border;
+    margin: 0 0 64px 0;
+
+    & > h2 {
+      font-size: 32px;
+      text-align: center;
+      margin: 0 0 32px 0;
+    }
+
+    .meta {
+      text-align: center;
+      color: $color-lighter-text;
+      margin: 0 0 8px 0;
+
+      span {
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 32px 0;
+
+      .tag {
+        display: block;
+
+        &:before {
+          content: '·';
+          margin: 0 5px;
+        }
+
+        &:first-child:before {
+          content: none;
+        }
+      }
+    }
+
+    .article-content {
+      font-size: $font-size-big;
+      margin: 0 0 64px 0;
+    }
+
+    .operations {
+      padding: 0;
+      margin: 0 0 64px 0;
+
+      li {
+        margin: 0 0 24px 0;
+        display: flex;
+        align-items: center;
+
+        .label {
+          width: 80px;
+          color: $color-light-text;
+          margin: 0 12px 0 0;
+
+          &:after {
+            content: '：'
+          }
+        }
+
+        .links {
+          a {
+            display: inline-block;
+            margin: 0 12px 0 0;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .login-to-comment {
+    margin: 0 0 32px 0;
+    display: flex;
+    align-items: center;
+    color: $color-lighter-text;
+
+    .avatar {
+      margin: 0 12px 0 0;
+    }
+  }
+
+  beast-comment-input {
+    margin: 0 0 32px 0;
+  }
 }

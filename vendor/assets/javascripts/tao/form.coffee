@@ -8,8 +8,12 @@ class TaoForm extends TaoComponent
     @_bind()
 
   _bind: ->
-    @form.on 'ajax:beforeSend', => @loading()
-    @form.on 'ajax:success', => @restoreButton()
+    @form.on 'ajax:beforeSend', (e) =>
+      @loading()
+      @trigger 'beforeSubmit'
+    @form.on 'ajax:success', (e) =>
+      @restoreButton()
+      @trigger 'success'
     @form.on 'blur', '.input', (e) =>
       @_clearError $(e.currentTarget)
 

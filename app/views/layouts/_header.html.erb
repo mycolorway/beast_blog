@@ -14,7 +14,7 @@
         <li><%= link_to t('.zhiren'), 'https://zhiren.com' %></li>
       </ul>
 
-      <% if logged_in? %>
+      <% if logged_in? && current_user.author? %>
       <div class="user-info">
         <%= link_to new_post_path, class: 'link-new-post' do %>
           <%= icon_tag :edit %>

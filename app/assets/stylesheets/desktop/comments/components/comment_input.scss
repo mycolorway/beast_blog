@@ -1,0 +1,42 @@
+@import 'desktop/_base';
+
+beast-comment-input {
+  display: block;
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      margin: 0 12px 0 0;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+  }
+
+  .comment-form {
+    margin: 16px 0 0 0;
+    position: relative;
+
+    .form-input.text .input-content{
+      width: 100%;
+
+      textarea {
+        width: 100%;
+        overflow: hidden;
+        padding: 16px 16px 72px 16px;
+      }
+    }
+
+    button[type="submit"] {
+      height: 32px;
+      padding: 0 12px;
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+    }
+
+  }
+}

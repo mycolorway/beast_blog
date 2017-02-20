@@ -12,13 +12,13 @@
     <h3><%= t('.features') %></h3>
     <ul class="feature-links">
       <li>
-        <%= link_to t('.archive'), '#' %>
+        <%= link_to t('.archive'), archive_path %>
       </li>
       <li>
         <%= link_to t('.rss'), '#' %>
       </li>
       <li>
-        <% if logged_in? %>
+        <% if logged_in? && current_user.author? %>
           <%= link_to t('.logout'), logout_path %>
         <% else %>
           <%= link_to t('.login'), login_path %>

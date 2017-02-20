@@ -26,11 +26,13 @@
       .input-field {
         font-size: 32px;
         width: 100%;
+        text-align: center;
       }
     }
 
     .post-content {
-      margin: 32px 0 0 0;
+      margin: 32px 0;
+      border-bottom: 1px solid $color-border;
     }
 
     .post-slug,

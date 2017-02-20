@@ -1,3 +1,6 @@
+<% if params[:tag].present? %>
+<div class="tag-title"><%= params[:tag] %></div>
+<% end %>
 <div class="posts">
   <% if @posts.any? %>
     <%= render @posts %>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   match "/auth/:provider/callback", :to => 'sessions#create', via: :all
 
   resources :posts do
-    resources :comments, module: 'posts', only: [:index, :create]
+    resources :comments, only: [:index, :create, :destroy], shallow: true
   end
   resource :archive, only: [:show]
 

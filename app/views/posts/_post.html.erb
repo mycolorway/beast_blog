@@ -7,13 +7,9 @@
   <div class="abstract">
     <%= post.abstract.html_safe %>
   </div>
-  <div class="info">
-    <span class="created-at"><%= post.created_at.strftime("%Y/%m/%d") %></span>
+  <div class="meta">
+    <span class="created-at"><%= l post.created_at.to_date, formart: :short %></span>
     <span class="author"><%= post.author.name %></span>
-    <div class="tags">
-      <%= post.tags.map do |tag| %>
-        <% render tag %>
-      <% end.join('·').html_safe %>
-    </div>
+    <div class="tags"><%= render post.tags %></div>
   </div>
 </article>

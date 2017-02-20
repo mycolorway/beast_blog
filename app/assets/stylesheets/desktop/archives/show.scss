@@ -1,6 +1,37 @@
 @import 'desktop/_base';
 
 archives-show-page {
+  .archive {
+    margin: 0 0 64px 0;
+    
+    h2 {
+      color: $color-lighter-text;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0 0 32px 0;
+    }
+
+    .posts {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0 0 12px 0;
+
+        a {
+          color: $color-text;
+          font-size: $font-size-big;
+          font-weight: bold;
+
+          &:hover {
+            color: $color-link;
+          }
+        }
+      }
+    }
+
+  }
   .posts {
     .post {
       line-height: 24px;
