@@ -21,6 +21,8 @@ class User < ApplicationRecord
           bio: auth[:info][:bio],
           avatar: auth[:info][:image])
 
+        return if user.errors.any?
+
         user.authentications.create(
           provider:  auth[:provider],
           uid: auth[:uid],

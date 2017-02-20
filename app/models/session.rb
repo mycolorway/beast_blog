@@ -8,6 +8,10 @@ class Session < ActiveType::Object
   validates :password, presence: true
   validate :auth_user
 
+  def save
+    user if !user&.new_record?
+  end
+
   private
 
   def auth_user

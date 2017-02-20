@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
     if @session.save
       log_in @session.user
       @redirect_url = session[:return_to] || posts_path
+    else
+      render :new
     end
   end
 
@@ -20,7 +22,7 @@ class SessionsController < ApplicationController
   private
 
     def build_session
-      @session ||= Session.new(omniauth: request.env['omniauth.auth'].present?)
+      @session ||= Session.new(omniauth: request.env['omniauth.auth'])
       @session.attributes = session_params
     end
 
