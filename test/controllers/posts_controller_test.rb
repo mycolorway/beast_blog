@@ -39,15 +39,19 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should update post" do
     slug = random_string
 
-    patch post_url(@post), params: { post: { content: slug, slug: slug, title: slug } }
-    assert_redirected_to post_url(slug)
+    patch post_url(@post), params: { post: { content: slug, slug: slug, title: slug } }, xhr: true
+
+    assert_response :success
+
+    @post.reload
+    assert_equal slug, @post.content
+    assert_equal slug, @post.title
   end
 
   test "should destroy post" do
     assert_difference('Post.count', -1) do
-      delete post_url(@post)
+      delete post_url(@post), xhr: true
+      assert_response :success
     end
-
-    assert_redirected_to posts_url
   end
 end
