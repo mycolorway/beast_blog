@@ -1,8 +1,13 @@
 zh-CN:
   sessions:
-    modalview:
+    new:
       author_login: 作者登录
     form:
       login: 登录
-      email: 请输入邮箱地址
-      password: 请输入密码
+
+  simple_form:
+    placeholders:
+      session:
+        new:
+          email: 输入邮箱地址
+          password: 输入登录密码

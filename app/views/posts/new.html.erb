@@ -1,13 +1,1 @@
-<div class="top-fix">
-  <div class="left">
-    <div class="close">
-    </div>
-  </div>
-  <div class="right">
-    <img class="avatar" src="<%= current_user.avatar %>" />
-    <%= link_to t('.post_paper'), 'javascript:;', class: 'button publish' %>
-  </div>
-</div>
-<div class="content">
-  <%= render 'form', post: @post %>
-</div>
+<%= render 'form', post: @post %>

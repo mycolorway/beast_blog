@@ -1,0 +1,29 @@
+<div class="sidebar">
+  <% if Tag.any? %>
+  <section class="tags">
+    <h3><%= t('.taggings') %></h3>
+    <div class="tag-list">
+      <%= render Tag.first(20) %>
+    </div>
+  </section>
+  <% end %>
+
+  <section class="features">
+    <h3><%= t('.features') %></h3>
+    <ul class="feature-links">
+      <li>
+        <%= link_to t('.archive'), archive_path %>
+      </li>
+      <li>
+        <%= link_to t('.rss'), '#' %>
+      </li>
+      <li>
+        <% if logged_in? && current_user.author? %>
+          <%= link_to t('.logout'), logout_path %>
+        <% else %>
+          <%= link_to t('.login'), login_path %>
+        <% end %>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,32 @@
+@import 'desktop/_base';
+
+sessions-new-page {
+
+  .login-box {
+    width: 320px;
+    padding: 32px;
+
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+    }
+
+    tao-form {
+      margin: 32px 0 0 0;
+
+      .form-input {
+        margin: 0 0 16px 0;
+
+        .input-content, input {
+          width: 100%;
+        }
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+}

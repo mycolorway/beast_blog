@@ -1,0 +1,35 @@
+//= require tao
+
+@import '_base';
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+
+  &.warn {
+    color: $color-error;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-link-hover;
+  }
+}
+
+.avatar {
+  display: inline-block;
+  border-radius: 100%;
+  background: #cccccc;
+  color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}

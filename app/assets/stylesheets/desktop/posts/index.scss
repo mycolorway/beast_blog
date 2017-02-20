@@ -1,0 +1,77 @@
+@import 'desktop/_base';
+
+posts-index-page {
+
+  .tag-title {
+    font-size: 20px;
+    color: #666666;
+    margin: 0 0 32px 0;
+
+    &:before {
+      content: '#';
+      margin: 0 5px 0 0;
+    }
+  }
+
+  .posts {
+    .no-post {
+      color: $color-light-text;
+      margin: 16px 0;
+    }
+
+    .post {
+      margin: 0 0 64px 0;
+      
+      .title {
+        font-size: 20px;
+        margin: 0 0 24px 0;
+
+        a {
+          color: $color-text;
+
+          &:hover {
+            color: $color-link;
+          }
+        }
+      }
+
+      .abstract {
+        line-height: 2.0;
+        color: $color-light-text;
+      }
+
+      .meta {
+        display: flex;
+        align-items: center;
+        margin: 12px 0 0 0;
+        font-size: 12px;
+
+        .created-at,
+        .author {
+          color: $color-lighter-text;
+          margin: 0 10px 0 0;
+        }
+
+        .tags {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .tag {
+            display: block;
+
+            &:before {
+              content: '·';
+              margin: 0 5px;
+            }
+
+            &:first-child:before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

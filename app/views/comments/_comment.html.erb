@@ -1,12 +1,20 @@
-<beast-comment>
+<div class="comment" id="<%= dom_id comment %>">
   <div class="left">
-    <%= image_tag comment.user.avatar, class: 'avatar' %>
+    <%= image_tag comment.user.avatar.presence || 'avatar.png', class: 'avatar' %>
   </div>
   <div class="right">
-    <div class="user-info">
-      <div class="user-name"><%= comment.user.name %></div>
-      <div class="created-at"><%= comment.created_at.strftime("%Y/%m/%d") %></div>
+    <div class="title">
+      <div class="meta">
+        <div class="user-name"><%= comment.user.name %></div>
+        <div class="created-at"><%= l comment.created_at, format: :short %></div>
+      </div>
+      <div class="links">
+        <% if current_user == comment.user %>
+        <%= link_to t('.delete_comment'), comment_path(comment), class: 'link-delete warn',
+          method: :delete, data: {confirm: t('.confirm_delete_comment')}, remote: true %>
+        <% end %>
+      </div>
     </div>
-    <div class="comment-content"><%= comment.content %></div>
+    <div class="content"><%= sanitize comment.content.gsub(/\n/, '<br/>') %></div>
   </div>
-</beast-comment>
+</div>

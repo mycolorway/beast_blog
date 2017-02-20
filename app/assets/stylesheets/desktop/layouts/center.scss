@@ -1,0 +1,20 @@
+@import 'desktop/_base';
+
+.tao-page[layout="center"] {
+
+  .page-content {
+    min-height: 100%;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    > .center-box {
+      border-radius: 2px;
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.08);
+    }
+  }
+
+
+}

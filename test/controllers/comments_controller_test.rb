@@ -7,9 +7,11 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     sign_in_as @user
   end
 
-  test "should get comments" do
-    get post_comments_url(@post.slug), xhr: true
-    assert_response :success
+  test "Create comments" do
+    assert_difference('Comment.count', 1) do
+      post post_comments_path(@post.slug, params: { comment: {content: 'sofa'} }), xhr: true
+      assert_response :success
+    end
   end
 
 end

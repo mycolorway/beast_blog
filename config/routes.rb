@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   match "/auth/:provider/callback", :to => 'sessions#create', via: :all
 
   resources :posts do
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:index, :create, :destroy], shallow: true
   end
   resource :archive, only: [:show]
 
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create]
   end
 
-  #feed
+  # feed
   get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }
   get '/tag/:tag', to: 'posts#index', as: :tag
 end

@@ -1,0 +1,64 @@
+@import 'desktop/_base';
+
+.post-form {
+  input[type='text'],
+  textarea {
+    border: none;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .form-input.input-with-errors .input-content .input-field {
+    border-color: none;
+    box-shadow: none;
+  }
+
+  .writing-post {
+    width: 640px;
+    margin: 96px auto;
+
+    .post-title {
+      display: block;
+
+      .input-field {
+        font-size: 32px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .post-content {
+      margin: 32px 0;
+      border-bottom: 1px solid $color-border;
+    }
+
+    .post-slug,
+    .post-tags {
+      .input-label {
+        color: $color-light-text;
+        width: auto;
+        text-align: left;
+        margin: 0;
+
+        b {
+          color: #666666;
+        }
+      }
+
+      .input-content {
+        max-width: none;
+        flex: 1 1 auto;
+
+        .input-field {
+          width: 100%;
+          color: $color-text;
+          padding: 0 4px;
+        }
+      }
+    }
+  }
+
+}

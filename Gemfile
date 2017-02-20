@@ -19,10 +19,6 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -73,5 +69,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_type', github: 'makandra/active_type', branch: :master
 
 # Front-End
-gem 'tao_on_rails', '~> 0.6.1'
+# gem 'tao_on_rails', '~> 0.6.4'
+gem 'tao_on_rails', github: 'mycolorway/tao_on_rails', branch: :master
 gem 'simple_form', '~> 3.3.1'
+gem 'autoprefixer-rails', '~> 6.4.0'

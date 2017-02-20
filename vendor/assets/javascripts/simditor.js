@@ -1,3 +1,3 @@
-#= require ./module
-#= require ./hotkeys
-#= require ./editor
+//= require ./module
+//= require ./hotkeys
+//= require ./editor

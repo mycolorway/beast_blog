@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <%= tao_page layout: 'center' do %>
+      <div class="page-content">
+        <%= yield %>
+      </div>
+    <% end %>
+  </body>
+</html>

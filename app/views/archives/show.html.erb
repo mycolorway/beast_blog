@@ -1,14 +1,12 @@
 <% @posts.each do |month, posts| %>
-  <div class="archive-month">
-    <h2 class="month-title">
-      <%= month.strftime("%b %Y") %>
-    </h2>
-    <div class="posts">
+  <div class="archive">
+    <h2><%= month.strftime("%Y/%m") %></h2>
+    <ul class="posts">
       <% posts.each do |post| %>
-        <div class="post">
-          <%= link_to post.title, post_path(post), class: 'post-title' %>
-        </div>
+      <li>
+        <%= link_to post.title, post_path(post.slug), class: 'link-post' %>
+      </li>
       <% end %>
-    </div>
+    </ul>
   </div>
 <% end %>

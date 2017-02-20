@@ -1,12 +1,21 @@
-<beast-form>
-<%= simple_form_for(post, action: :create, remote: true) do |f| %>
-  <%= f.input :title, label: false, placeholder: t('.title') %>
-  <%= f.input :content, label: false do %>
-    <beast-editor>
-      <%= f.text_area :content %>
+<tao-form class="post-form">
+<%= simple_form_for(post, remote: true) do |f| %>
+
+  <%= render 'header', post: post, f: f %>
+
+  <div class="writing-post">
+    <%= f.input :title, label: false, placeholder: true, wrapper_html: {class: 'post-title'} %>
+
+    <beast-editor class="post-content">
+      <%= f.input_field :content, label: false, placeholder: true %>
     </beast-editor>
-  <% end %>
-  <%= f.input :tag_string, label: t('.tags') %>
-  <%= f.input :slug, label: t('.change_slug', posts_url: posts_url), required: false %>
+
+    <%= f.input :slug, label: t('.slug_label_html', path: post_url(id: '')),
+      required: false, wrapper_html: {class: 'post-slug'}, placeholder: true %>
+
+    <%= f.input :tag_string, label: t('.tag_string_label_html'), placeholder: true,
+      wrapper_html: {class: 'post-tags'} %>
+  </div>
+
 <% end %>
-</beast-form>
+</tao-form>

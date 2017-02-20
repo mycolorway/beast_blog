@@ -1,7 +1,5 @@
 <% if @post.errors.any? %>
-$(currentPage).find("#<%= dom_id(@post) %>").replaceWith('<%= render "form", post: @post %>')
-currentPage.bind()
-currentPage.publish.removeAttr 'disabled'
+currentPage.jq.find('.post-form').replaceWith('<%= j render "form", post: @post %>')
 <% else %>
 Turbolinks.visit "<%= post_url(@post) %>", replace: true
 <% end %>

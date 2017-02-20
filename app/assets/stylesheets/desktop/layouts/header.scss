@@ -1,0 +1,96 @@
+@import 'desktop/_base';
+
+.tao-page[layout="default"] header {
+  min-width: 1280px;
+  height: 300px;
+  display: block;
+  background-image: image-url('banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  .header-inner {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 160px;
+  }
+
+  .title {
+    height: 48px;
+    padding: 0 0 0 70px;
+    margin: 96px 0 0 0;
+    position: relative;
+
+    .logo {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      top: 0;
+      left: 0;
+    }
+
+    .name {
+      margin: 3px 0 0 0;
+      font-size: 21px;
+      color: #ffffff;
+    }
+
+    .desc {
+      margin: 3px 0 0 0;
+      font-size: 18px;
+      color: #ffffff;
+      opacity: 0.65;
+    }
+  }
+
+  nav {
+    margin: 80px 0 0 0;
+    padding: 0 2px;
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+      flex: 0 0 auto;
+      display: flex;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0 16px 0 0;
+
+        a {
+          color: #ffffff;
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    .user-info {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+
+      .link-new-post {
+        color: #ffffff;
+
+        .icon-edit {
+          width: 14px;
+          height: 14px;
+          margin: 0 8px 0 0;
+          fill: #ffffff;
+        }
+
+        &:hover {
+          opacity: 0.65;
+        }
+      }
+
+      .avatar {
+        margin: 0 0 0 12px;
+      }
+    }
+  }
+}

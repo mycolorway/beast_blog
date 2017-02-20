@@ -1,0 +1,13 @@
+//= require application
+//= require_tree ./
+//= require desktop/components/components
+
+@import './base';
+
+body {
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", 微软雅黑, STXihei, 华文细黑, sans-serif;
+  height: 100%;
+  background: #ffffff;
+  font-size: $font-size;
+  color: $color-text;
+}

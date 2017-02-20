@@ -1,0 +1,44 @@
+@import 'desktop/_base';
+
+.post-form header {
+  display: flex;
+  height: 96px;
+  padding: 0 32px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+
+  .left {
+    display: flex;
+
+    .link-return {
+      display: block;
+      width: 32px;
+      height: 32px;
+      padding: 10px;
+      background: #e6e6e6;
+      border-radius: 100%;
+
+      .icon-close {
+        display: block;
+        fill: #262626;
+        width: 12px;
+        height: 12px;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    .button-submit {
+      margin: 0 0 0 32px;
+    }
+  }
+
+}
