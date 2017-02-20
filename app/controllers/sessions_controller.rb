@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
     if @session.save
       log_in @session.user
       @redirect_url = session[:return_to] || posts_path
+      handle_login_success
     else
-      render :new
+      handle_login_failure
     end
   end
 
@@ -28,5 +29,19 @@ class SessionsController < ApplicationController
 
     def session_params
       params.fetch(:session, {}).permit [:email, :password]
+    end
+
+    def handle_login_success
+      respond_to do |format|
+        format.html { redirect_to @redirect_url }
+        format.js
+      end
+    end
+
+    def handle_login_failure
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
     end
 end

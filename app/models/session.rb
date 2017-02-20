@@ -9,7 +9,8 @@ class Session < ActiveType::Object
   validate :auth_user
 
   def save
-    user if !user&.new_record?
+    super
+    user unless user && user.errors.any?
   end
 
   private
