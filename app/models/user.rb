@@ -1,7 +1,5 @@
 class User < ApplicationRecord
 
-  validates :email, presence: true, uniqueness: true
-
   has_many :comments
   has_many :authentications
 
@@ -11,17 +9,21 @@ class User < ApplicationRecord
 
   class << self
     def authenticate auth
-      user = Authentication.find_by_provider_and_uid(auth[:provider],
-                                                     auth[:uid]).try(:user)
-      return user if user
+      locate_auth(auth) || create_user(auth)
+    end
+
+    def locate_auth auth
+      Authentication.find_by_provider_and_uid(auth[:provider], auth[:uid]).try(:user)
+    end
+
+
+    def create_user auth
       ActiveRecord::Base.transaction do
         user = User.create(
           name: auth[:info][:name],
           email: auth[:info][:email],
           bio: auth[:info][:bio],
           avatar: auth[:info][:image])
-
-        return if user.errors.any?
 
         user.authentications.create(
           provider:  auth[:provider],

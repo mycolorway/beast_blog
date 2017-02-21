@@ -4,13 +4,13 @@ class Session < ActiveType::Object
   attribute :email, :string
   attribute :password, :string
 
-  validates :email, presence: true
-  validates :password, presence: true
+  validates :email, presence: true, unless: :omniauth
+  validates :password, presence: true, unless: :omniauth
   validate :auth_user
 
   def save
     super
-    user unless user && user.errors.any?
+    user
   end
 
   private

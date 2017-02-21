@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
 
     def handle_login_success
       respond_to do |format|
-        format.html { redirect_to @redirect_url }
+        format.html { redirect_to(request.env['omniauth.origin'] || posts_path) }
         format.js
       end
     end

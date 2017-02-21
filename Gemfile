@@ -38,8 +38,8 @@ gem 'mini_magick', '~> 4.5'
 gem 'mime-types', '~> 3.1'
 gem 'file_validators'
 
-gem 'omniauth', '~> 1.3'
-gem 'omniauth-github', '~> 1.1'
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-github', '~> 1.2'
 
 # Deployment
 gem 'unicorn'
