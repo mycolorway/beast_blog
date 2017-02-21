@@ -3,7 +3,7 @@
   <section class="tags">
     <h3><%= t('.taggings') %></h3>
     <div class="tag-list">
-      <%= render Tag.first(20) %>
+      <%= render Tag.popular %>
     </div>
   </section>
   <% end %>
