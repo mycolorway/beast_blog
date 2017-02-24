@@ -9,6 +9,7 @@ class Invitation < ApplicationRecord
   belongs_to :author, class_name: 'Author', foreign_key: 'author_id', optional: true
 
   before_validation :init
+  after_commit :send_mail, on: :create
 
   def active
     return unless available?
@@ -50,5 +51,9 @@ class Invitation < ApplicationRecord
 
   def set_valid_before
     self.valid_before = Time.current + VALID_TIME_INTERVAL
+  end
+
+  def send_mail
+    InvitationMailer.invite_email(self).deliver_later
   end
 end
