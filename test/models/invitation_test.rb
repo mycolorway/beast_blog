@@ -30,13 +30,13 @@ class InvitationTest < ActiveSupport::TestCase
     assert_equal author, invitation.author
   end
 
-  test "Only the name and password present, it's ready" do
+  test "Only when the name and the password are present, the invitation is ready" do
     assert_not invitation.ready?
     invitation.attributes = { password: '111111' }
     assert invitation.ready?
   end
 
-  test "only unsued and un expired invitation is available" do
+  test "Only unsued and unexpired invitation is available" do
     assert invitation.available?
 
     invitation.update_attribute :used, :true
@@ -45,6 +45,5 @@ class InvitationTest < ActiveSupport::TestCase
     invitation.update_attributes(used: false, valid_before: Time.current - 1.hour)
     assert_not invitation.available?
   end
-
 
 end
