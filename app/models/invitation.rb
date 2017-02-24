@@ -1,4 +1,5 @@
 class Invitation < ApplicationRecord
+  attr_accessor :password
 
   VALID_TIME_INTERVAL = 3.hours
 
@@ -9,31 +10,22 @@ class Invitation < ApplicationRecord
 
   before_validation :init
 
-  class << self
-
-    def active code:, data: {}
-      invitation = where(code: code).first
-      if invitation.available?
-        invitation.active data
-      else
-        false
-      end
-    end
-  end
-
-  def active data
-    password = data.fetch('password')
-
+  def active
+    return unless available?
     ActiveRecord::Base.transaction do
-      author = Author.create name: self.name, email: self.email, password: password
-      self.update_attributes author_id: author.id, used: true
+      author = Author.create name: self.name, email: self.email, password: self.password
+      self.update_attributes author_id: author.id, used: true if author.valid?
     end
+    self
   end
 
   def available?
-    unused? && expired?
+    unused? && unexpired?
   end
 
+  def ready?
+    self.password.present? && self.name.present? ? true : false
+  end
 
   private
 
@@ -41,7 +33,7 @@ class Invitation < ApplicationRecord
     !used
   end
 
-  def expired?
+  def unexpired?
     Time.current < self.valid_before
   end
 
