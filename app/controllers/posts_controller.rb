@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     load_posts
     respond_to do |format|
       format.html { @posts = @posts.page(params[:page]).per(30) }
-      format.atom
+      format.atom { @posts = Post.article.published }
     end
   end
 
