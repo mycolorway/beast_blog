@@ -3,9 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    load_posts
     respond_to do |format|
-      format.html { @posts = @posts.page(params[:page]).per(30) }
+      format.html { @posts = posts.page(params[:page]).per(30) }
       format.atom { @posts = Post.article.published }
     end
   end
@@ -44,13 +43,14 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content, :slug, :tag_string, :published)
     end
 
-    def load_posts
-      @posts = Post.article.order("id DESC")
-      @posts = @posts.tag_with(params[:tag]) if params[:tag].present?
+    def posts
+      posts = Post.article.order("id DESC")
+      posts = posts.tag_with(params[:tag]) if params[:tag].present?
       if current_user&.author?
-        @posts = @posts.published.or(@posts.draft.where(author_id: current_user.id))
+        posts = posts.published.or(posts.draft.where(author_id: current_user.id))
       else
-        @posts = @posts.published
+        posts = posts.published
       end
+      posts
     end
 end
