@@ -13,13 +13,6 @@ module ApplicationHelper
       height: height,
       alt: user.name
     )
-
-    # abbr = (user.name =~ /^\w/) ? user.name[0].upcase : user.name[-2, 2]
-    # content_tag(
-    #   :div, abbr,
-    #   class: 'avatar',
-    #   style: "width: #{width}px; height: #{height}px; line-height: #{height}px; font-size: #{width / 2}px;"
-    # )
   end
 
 end

@@ -71,5 +71,6 @@ gem 'active_type', github: 'makandra/active_type', branch: :master
 # Front-End
 # gem 'tao_on_rails', '~> 0.6.4'
 gem 'tao_on_rails', github: 'mycolorway/tao_on_rails', branch: :master
+gem 'momentjs-rails', '~> 2.17.1'
 gem 'simple_form', '~> 3.3.1'
 gem 'autoprefixer-rails', '~> 6.4.0'
