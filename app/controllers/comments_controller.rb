@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :login_required, only: [:create]
-  # before_action :author_required, only: [:destroy]
   before_action :set_post, only: [:create, :index]
   before_action :set_comment, only: [:destroy]
 
@@ -13,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
+    @comment.destroy if @comment.can_delete_by(current_user)
   end
 
   private
