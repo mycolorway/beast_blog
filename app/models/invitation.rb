@@ -25,7 +25,12 @@ class Invitation < ApplicationRecord
   end
 
   def ready?
-    self.password.present? && self.name.present? ? true : false
+    if self.password.present?
+      true
+    else
+      errors.add :password, I18n.t('activerecord.errors.models.invitation.no_password') if self.password.blank?
+      false
+    end
   end
 
   private

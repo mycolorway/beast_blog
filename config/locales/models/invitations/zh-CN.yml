@@ -1,0 +1,14 @@
+zh-CN:
+  activerecord:
+    attributes:
+      invitation:
+        email: 邮箱
+        password: 密码
+        code: 激活码
+    errors:
+      models:
+        invitation:
+          no_password: 密码不能为空
+          attributes:
+            name:
+              blank: 名字不能为空
