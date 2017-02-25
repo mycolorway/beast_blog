@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, only: [:index, :create, :destroy], shallow: true
+    resources :published_posts, only: [:create, :destroy], shallow: true
   end
   resource :archive, only: [:show]
 

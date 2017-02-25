@@ -46,8 +46,7 @@ class PostsController < ApplicationController
 
     def load_posts
       @posts = Post.article.order("id DESC")
-      if params[:tag].present?
-        @posts = @posts.tag_with(params[:tag])
-      end
+      @posts = @posts.tag_with(params[:tag]) if params[:tag].present?
+      @posts = @posts.published unless current_user&.author?
     end
 end

@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   before_save :format_slug, :create_tags
 
   scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
+  scope :published, -> { where(published: true) }
+  scope :draft, -> { where(published: false) }
 
   def add_tags *tag_names
     tags.clear
@@ -33,6 +35,14 @@ class Post < ApplicationRecord
     slug.gsub! /\A[_\.]+|[_\.]+\z/,""
 
     URI.encode slug
+  end
+
+  def publish!
+    update_attribute :published, true
+  end
+
+  def draft!
+    update_attribute :published, false
   end
 
   def abstract
