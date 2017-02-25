@@ -1,8 +1,5 @@
-<%# TODO: Use Tao on Rails for this form. %>
-<%= simple_form_for @invitation, url: invitation_path(@invitation.code) do |f| %>
-  <%= f.input :email, label: false, placeholder: true, disabled: true %>
-  <%= f.input :name, label: false, placeholder: true %>
-  <%= f.input :password, label: false, placeholder: true %>
-  <%= f.submit%>
-<% end %>
+<div class="invitation-box center-box">
+  <h1><%= title t('.activate_account') %></h1>
 
+  <%= render 'form', invitation: @invitation %>
+</div>

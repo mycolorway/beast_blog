@@ -1,0 +1,8 @@
+<tao-form>
+  <%= simple_form_for invitation, url: invitation_path(invitation.code), remote: true do |f| %>
+    <%= f.input :email, label: false, placeholder: true, disabled: true %>
+    <%= f.input :name, label: false, placeholder: true %>
+    <%= f.input :password, label: false, placeholder: true %>
+    <%= f.button :submit, t('.submit') %>
+  <% end %>
+</tao-form>

@@ -9,3 +9,8 @@ zh-CN:
     comment:
       delete_comment: 删除评论
       confirm_delete_comment: 确定要删除这个评论吗？
+
+  simple_form:
+    placeholders:
+      comment:
+        content: 输入评论内容

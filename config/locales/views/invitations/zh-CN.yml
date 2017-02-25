@@ -1,0 +1,14 @@
+zh-CN:
+  invitations:
+    edit:
+      activate_account: 开通账户
+    form:
+      submit: 提交
+
+  simple_form:
+    placeholders:
+      invitation:
+        edit:
+          email: 输入邮箱地址
+          user: 输入姓名
+          password: 设置登录密码

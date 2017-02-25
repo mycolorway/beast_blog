@@ -1,5 +1,5 @@
 class InvitationsController < ApplicationController
-  before_filter :load_invitation
+  before_action :load_invitation
 
   def edit
     render layout: 'center'
@@ -9,9 +9,6 @@ class InvitationsController < ApplicationController
     invitation.attributes = invitations_params
     if invitation.ready?
       log_in invitation.author if invitation.save && invitation.active
-      redirect_to root_path
-    else
-      render :edit, layout: 'center'
     end
   end
 

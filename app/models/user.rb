@@ -29,9 +29,9 @@ class User < ApplicationRecord
           provider:  auth[:provider],
           uid: auth[:uid],
           token: auth.credentials.try(:token))
-      end
 
-      user
+        user
+      end
     end
   end
 end

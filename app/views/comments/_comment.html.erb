@@ -1,6 +1,6 @@
 <div class="comment" id="<%= dom_id comment %>">
   <div class="left">
-    <%= image_tag comment.user.avatar.presence || 'avatar.png', class: 'avatar' %>
+    <%= render_avatar comment.user %>
   </div>
   <div class="right">
     <div class="title">

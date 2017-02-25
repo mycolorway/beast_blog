@@ -2,6 +2,6 @@
   <%= simple_form_for session, url: sessions_path, remote: true do |f| %>
     <%= f.input :email, label: false, placeholder: true %>
     <%= f.input :password, label: false, placeholder: true %>
-    <%= f.button :button, t('.login') %>
+    <%= f.button :submit, t('.login') %>
   <% end %>
 </tao-form>

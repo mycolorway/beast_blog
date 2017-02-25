@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   before_action :login_required, only: [:create]
-  before_action :author_required, only: [:destroy]
+  # before_action :author_required, only: [:destroy]
   before_action :set_post, only: [:create, :index]
   before_action :set_comment, only: [:destroy]
 
   def index
-    @comments = @post.comments.page(params[:page]).per(30)
+    @comments = @post.comments.sort.page(params[:page]).per(30)
   end
 
   def create
