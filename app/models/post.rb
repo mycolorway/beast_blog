@@ -37,14 +37,6 @@ class Post < ApplicationRecord
     URI.encode slug
   end
 
-  def publish!
-    update_attribute :published, true
-  end
-
-  def draft!
-    update_attribute :published, false
-  end
-
   def abstract
     # first p tag or first 100 words
     /<p>(.*?)<\/p>/.match(self.content).to_a.last || self.content.first(100)

@@ -41,12 +41,16 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :slug, :tag_string)
+      params.require(:post).permit(:title, :content, :slug, :tag_string, :published)
     end
 
     def load_posts
       @posts = Post.article.order("id DESC")
       @posts = @posts.tag_with(params[:tag]) if params[:tag].present?
-      @posts = @posts.published unless current_user&.author?
+      if current_user&.author?
+        @posts = @posts.published.or(@posts.draft.where(author_id: current_user.id))
+      else
+        @posts = @posts.published
+      end
     end
 end
