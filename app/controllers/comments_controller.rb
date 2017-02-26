@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def index
-    @comments = @post.comments.sort.page(params[:page]).per(30)
+    @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(30)
   end
 
   def create

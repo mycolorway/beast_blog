@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.comments.page(params[:page]).per(30)
+    @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(30)
   end
 
   def new

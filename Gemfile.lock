@@ -128,6 +128,8 @@ GEM
     minitest (5.10.1)
     mocha (1.2.1)
       metaclass (~> 0.0.1)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -255,6 +257,7 @@ DEPENDENCIES
   mina-unicorn
   mini_magick (~> 4.5)
   mocha (~> 1.2)
+  momentjs-rails (~> 2.17.1)
   mysql2
   omniauth (~> 1.6)
   omniauth-github (~> 1.2)
@@ -276,4 +279,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.14.2
+   1.14.4
