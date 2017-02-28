@@ -1,0 +1,15 @@
+@import 'desktop/_base';
+
+beast-post-autosave {
+  display: none;
+  font-size: $font-size-small;
+  color: $color-lighter-text;
+
+  .time {
+    margin: 0 4px;
+  }
+
+  &[last-save-time] {
+    display: block;
+  }
+}

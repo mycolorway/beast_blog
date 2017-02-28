@@ -64,22 +64,4 @@ beast-comment-list {
     }
   }
 
-  .more-comments {
-    display: flex;
-    justify-content: center;
-
-    .link-fetch-comments {
-      display: block;
-      line-height: 32px;
-      padding: 0 12px;
-      background: #f5f5f5;
-      border-radius: 2px;
-      color: $color-light-text;
-
-      &:hover {
-        background: #efefef;
-      }
-    }
-
-  }
 }

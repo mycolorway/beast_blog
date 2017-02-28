@@ -4,12 +4,6 @@ class CommentList extends TaoComponent
 
   @attribute 'empty', type: 'boolean'
 
-  _init: ->
-    super
-    @_bind()
-
-  _bind: ->
-
   addComment: ($comment) ->
     $lastComment = @jq.find('.comment:last')
     if $lastComment.length > 0
@@ -26,6 +20,6 @@ class CommentList extends TaoComponent
     @empty = count == 0
 
   moreComments: ($comments) ->
-    @jq.find('.more-comments').replaceWith $comments
+    @jq.find('beast-scroll-load').replaceWith $comments
 
 TaoComponent.register CommentList

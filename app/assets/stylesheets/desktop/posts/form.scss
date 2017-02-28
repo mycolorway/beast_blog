@@ -1,6 +1,7 @@
 @import 'desktop/_base';
 
 .post-form {
+
   input[type='text'],
   textarea {
     border: none;
@@ -18,7 +19,7 @@
 
   .writing-post {
     width: 640px;
-    margin: 96px auto;
+    margin: 128px auto 64px;
 
     .post-title {
       display: block;
@@ -56,6 +57,32 @@
           width: 100%;
           color: $color-text;
           padding: 0 4px;
+        }
+      }
+    }
+
+    .links {
+      margin: 64px 0 0 0;
+
+      a {
+        margin: 0 16px 0 0;
+      }
+
+      input[type='submit'],
+      button {
+        display: inline-block;
+        min-width: 0;
+        height: auto;
+        padding: 0;
+        margin: 0 16px 0 0;
+        background: none;
+        color: $color-link;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+
+        &:hover {
+          color: $color-link-hover;
         }
       }
     }

@@ -1,0 +1,18 @@
+@import '_base';
+
+beast-scroll-load {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto;
+
+  span {
+    display: block;
+    flex: 0 0 auto;
+    background: #f3f3f3;
+    color: $color-light-text;
+    font-size: 12px;
+    line-height: 1;
+    padding: 8px 10px;
+    border-radius: 2px;
+  }
+}

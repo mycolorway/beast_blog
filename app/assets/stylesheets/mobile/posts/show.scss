@@ -1,0 +1,41 @@
+@import 'mobile/_base';
+
+posts-show-page {
+
+  .post {
+    & > h2 {
+      font-size: 20px;
+      text-align: center;
+      margin: 0 0 15px 0;
+
+      .label {
+        display: inline-block;
+        padding: 4px 6px;
+        color: #ffffff;
+        background: #999999;
+        font-size: $font-size-small;
+        font-weight: normal;
+        border-radius: 4px;
+        vertical-align: middle;
+        margin: 0 10px;
+      }
+    }
+
+    .meta {
+      text-align: center;
+      color: $color-lighter-text;
+      margin: 0 0 8px 0;
+
+      span {
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+
+    .article-content {
+      font-size: $font-size;
+      margin: 30px 0;
+    }
+
+  }
+}

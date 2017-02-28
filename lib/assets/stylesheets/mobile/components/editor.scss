@@ -1,0 +1,11 @@
+//= require desktop/components/editor
+
+@import 'mobile/_base';
+
+.editor-style {
+  h2 {
+    margin: 20px 0 10px 0;
+    font-size: $font-size-big;
+    font-weight: bold;
+  }
+}

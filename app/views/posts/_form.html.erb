@@ -7,7 +7,7 @@
     <%= f.input :title, label: false, placeholder: true, wrapper_html: {class: 'post-title'} %>
 
     <beast-editor class="post-content">
-      <%= f.input_field :content, label: false, placeholder: true %>
+      <%= f.input_field :content, label: false, placeholder: true, class: 'field-post-content' %>
     </beast-editor>
 
     <%= f.input :slug, label: t('.slug_label_html', path: post_url(id: '')),
@@ -15,7 +15,17 @@
 
     <%= f.input :tag_string, label: t('.tag_string_label_html'), placeholder: true,
       wrapper_html: {class: 'post-tags'} %>
+
+    <div class="links">
+      <% if post.published? %>
+        <%= f.button :button, t('.unpublish'), class: 'link-unpublish',
+          name: 'post[published]', value: false, data: {confirm: t('.confirm_unpublish')} %>
+      <% end %>
+
+      <%= link_to t('.delete_post'), post_path(@post), class: 'link-edit-post warn', method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true %>
+    </div>
   </div>
+
 
 <% end %>
 </tao-form>

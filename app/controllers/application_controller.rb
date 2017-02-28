@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :set_variant
   helper_method :current_user, :logged_in?
 
   protected
+
+  def set_variant
+    request.variant = :mobile if browser.device.mobile?
+  end
 
   def log_in user
     session[:user_id] = user.id

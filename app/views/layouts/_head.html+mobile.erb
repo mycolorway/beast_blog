@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="msapplication-tap-highlight" content="no"/>
+
+<% if @turbolinks_no_cache %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% elsif @turbolinks_no_preview %>
+  <meta name="turbolinks-cache-control" content="no-preview">
+<% end %>
+
+<link rel="icon" type="image/png" href="/favicon.png?v=2" />
+
+<!-- SEO optimize -->
+<title><%= content_for(:title) || ENV['site_name'] %></title>
+
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'mobile/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'mobile/application', 'data-turbolinks-track': 'reload' %>

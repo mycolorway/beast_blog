@@ -1,6 +1,13 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<% if @turbolinks_no_cache %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% elsif @turbolinks_no_preview %>
+  <meta name="turbolinks-cache-control" content="no-preview">
+<% end %>
+
 <link rel="icon" type="image/png" href="/favicon.png?v=2" />
 
 <!-- SEO optimize -->

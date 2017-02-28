@@ -7,5 +7,6 @@ class Editor extends TaoComponent
   _init: ->
     new Simditor
       textarea: $(@).find 'textarea'
+      toolbarFloatOffset: 24
 
 TaoComponent.register Editor

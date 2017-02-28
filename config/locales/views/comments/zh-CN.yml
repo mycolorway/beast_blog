@@ -3,7 +3,7 @@ zh-CN:
     form:
       submit: 提交
     list:
-      more_comments: 显示更多评论
+      loading_more_comments: 正在加载更多评论
       loading: 正在加载
       no_more: 没有更多评论了
     comment:

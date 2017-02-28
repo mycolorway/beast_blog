@@ -1,11 +1,20 @@
 <header>
   <div class="left">
-    <%= link_to 'javascript:history.back()', class: 'link-return', title: t('.return') do %>
+    <%= link_to post_path(post), class: 'link-return', title: t('.return') do %>
       <%= icon_tag :close %>
     <% end %>
+
+    <beast-post-autosave url="<%= post_path(post, autosave: true) %>" value-field-selector=".field-post-content">
+      <%= t '.last_save_at' %>
+      <span class="time"></span>
+    </beast-post-autosave>
   </div>
   <div class="right">
     <%= render_avatar current_user %>
-    <%= f.button :submit, t(post.new_record? ? '.publish_post' : '.save_post'), class: 'button-submit' %>
+    <%= f.button :submit, t('.save'), class: 'button button-secondary' %>
+    <% unless post.published? %>
+      <%= f.button :button, t('.publish'), class: 'button', name: 'post[published]', value: true,
+        data: {confirm: t('.confirm_publish')} %>
+    <% end %>
   </div>
 </header>

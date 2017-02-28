@@ -1,9 +1,13 @@
 zh-CN:
   posts:
+    no_title: 无题
     index:
       no_post: 作者很懒，还没有写过文章
       create_first_post: 创建第一篇文章
+    list:
+      loading_more_post: 正在加载更多文章
     show:
+      draft: 草稿
       share_post: 分享到
       manage_post: 管理文章
       edit_post: 编辑
@@ -14,11 +18,19 @@ zh-CN:
       comments_title_html: <span class="count">%{count}</span> 条评论
     header:
       return: 返回
-      save_post: 保存文章
-      publish_post: 发布文章
+      last_save_at: 上一次保存
+      save: 保存
+      publish: 发布
+      confirm_publish: 确定要发布这篇文章吗？发布之后所有人都能看到这篇文章。
     form:
       slug_label_html: <b>文章地址后缀：</b>%{path}
       tag_string_label_html: <b>文章标签：</b>
+      delete_post: 删除这篇文章
+      confirm_delete_post: 确定要删除这篇文章吗？不能反悔哦！
+      unpublish: 取消发布
+      confirm_unpublish: 确定要取消发布这篇文章吗？撤销发布之后只有作者自己才能看到这篇文章。
+    post:
+      draft: 草稿
 
   simple_form:
     placeholders:

@@ -1,11 +1,14 @@
 <article class="post">
   <h2 class="title">
-    <%= link_to post_path(id: post.slug) do %>
-      <%= post.title %>
+    <%= link_to post_path_with_slug(post) do %>
+      <%= post_title post %>
+    <% end %>
+    <% unless post.published? %>
+    <span class="label"><%= t '.draft' %></span>
     <% end %>
   </h2>
   <div class="abstract">
-    <%= post.abstract.html_safe %>
+    <%= post.abstract&.html_safe %>
   </div>
   <div class="meta">
     <span class="created-at"><%= l post.created_at.to_date, formart: :short %></span>

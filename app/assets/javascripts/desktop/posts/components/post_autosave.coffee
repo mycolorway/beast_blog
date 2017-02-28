@@ -1,7 +1,7 @@
 
 class PostAutosave extends TaoComponent
 
-  @tag: 'beast-posst-autosave'
+  @tag: 'beast-post-autosave'
 
   @attribute 'url'
 
@@ -9,7 +9,7 @@ class PostAutosave extends TaoComponent
 
   @attribute 'interval', default: 120
 
-  @attribute 'lastSaveTime'
+  @attribute 'lastSaveTime', observe: true
 
   _connected: ->
     @valueField = if @valueFieldSelector && @valueFieldTraversal
@@ -17,28 +17,32 @@ class PostAutosave extends TaoComponent
     else if @valueFieldSelector
       $ @valueFieldSelector
 
-    @_lastSaveTimeChanged()
     @_startInterval()
 
   _disconnected: ->
     @_stopInterval()
 
-  _renderSaveTime: (timeString) ->
-    return unless timeString
-    time = moment timeString
+  _renderSaveTime: ->
+    return unless @lastSaveTime
+    time = moment @lastSaveTime
     @jq.find('.time').text time.fromNow()
 
   _lastSaveTimeChanged: ->
-    @_renderSaveTime @lastSaveTime
+    @_renderSaveTime()
 
   _startInterval: ->
     @_lastSavedValue = @valueField.val()
-    @_timer = setInterval =>
+    @_saveTimer = setInterval =>
       @_save()
     , @interval * 1000
 
+    @_refreshTimer = setInterval =>
+      @_renderSaveTime()
+    , 45000
+
   _stopInterval: ->
-    clearInterval @_timer
+    clearInterval @_saveTimer
+    clearInterval @_refreshTimer
 
   _save: ->
     value = @valueField.val()
@@ -50,7 +54,7 @@ class PostAutosave extends TaoComponent
         url: @url
         dataType: 'script'
         type: 'post'
-        data: $form.serialize() #.replace("&_method=patch")
+        data: $form.serialize()
 
       @_lastSavedValue = value
 

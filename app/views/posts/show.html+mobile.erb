@@ -1,0 +1,16 @@
+<article class="post">
+  <h2 class="title">
+    <%= post_title @post %>
+    <% unless @post.published? %>
+      <span class="label"><%= t '.draft' %></span>
+    <% end %>
+  </h2>
+  <div class="meta">
+    <span class="created-at"><%= l @post.created_at.to_date, format: :short %></span>
+    <span class="author"><%= @post.author.name %></span>
+  </div>
+
+  <div class="article-content editor-style">
+    <%= @post.content&.html_safe %>
+  </div>
+</article>

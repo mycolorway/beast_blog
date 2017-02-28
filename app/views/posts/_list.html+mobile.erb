@@ -1,0 +1,7 @@
+<%= render posts %>
+
+<% if posts.next_page %>
+<beast-scroll-load url="<%= posts_path(page: posts.next_page) %>">
+  <span><%= t '.loading_more_post' %></span>
+</beast-scroll-load>
+<% end %>

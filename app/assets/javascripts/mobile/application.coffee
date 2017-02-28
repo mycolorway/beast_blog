@@ -1,7 +1,7 @@
 #= require application
 #= require_self
 #= require_tree .
-#= require mobile/components/components
+#= require mobile/components
 
 class MobileApplication extends TaoApplication
 

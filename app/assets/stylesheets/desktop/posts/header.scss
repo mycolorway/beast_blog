@@ -2,20 +2,29 @@
 
 .post-form header {
   display: flex;
-  height: 96px;
-  padding: 0 32px;
+  min-width: 1280px;
+  height: 64px;
+  padding: 0 18px;
+  background: #ffffff;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
 
   .left {
     display: flex;
+    align-items: center;
 
     .link-return {
       display: block;
       width: 32px;
       height: 32px;
       padding: 10px;
+      margin: 0 16px 0 0;
       background: #e6e6e6;
       border-radius: 100%;
 
@@ -36,8 +45,16 @@
     display: flex;
     align-items: center;
 
-    .button-submit {
-      margin: 0 0 0 32px;
+    .avatar {
+      margin: 0 28px 0 0;
+    }
+
+    .button {
+      margin: 0 16px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 

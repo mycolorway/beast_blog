@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <%= tao_page layout: 'default' do %>
+      <%= render 'layouts/header' %>
+      <div class="page-content">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    <% end %>
+  </body>
+</html>

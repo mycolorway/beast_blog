@@ -1,0 +1,9 @@
+@import 'mobile/_base';
+
+.tao-page[layout="default"] footer {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: $font-size-small;
+  color: $color-lighter-text;
+}

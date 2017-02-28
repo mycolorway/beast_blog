@@ -21,7 +21,7 @@ posts-index-page {
 
     .post {
       margin: 0 0 64px 0;
-      
+
       .title {
         font-size: 20px;
         margin: 0 0 24px 0;
@@ -32,6 +32,18 @@ posts-index-page {
           &:hover {
             color: $color-link;
           }
+        }
+
+        .label {
+          display: inline-block;
+          padding: 4px 6px;
+          color: #ffffff;
+          background: #999999;
+          font-size: $font-size-small;
+          font-weight: normal;
+          border-radius: 4px;
+          vertical-align: middle;
+          margin: 0 0 0 10px;
         }
       }
 

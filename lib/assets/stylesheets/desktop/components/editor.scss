@@ -10,16 +10,24 @@ beast-editor {
       .simditor-toolbar {
         border-bottom: 1px solid #f5f5f5;
         border-top: 1px solid #f5f5f5;
+        z-index: 100;
 
         & > ul {
           padding: 0;
+          display: flex;
+          justify-content: center;
 
           & > li > .toolbar-item {
             width: 40px;
             height: 40px;
           }
-
         }
+      }
+
+      &.toolbar-floating .simditor-toolbar {
+        margin-top: -12px;
+        box-shadow: none;
+        border-color: transparent;
       }
 
       .simditor-body {

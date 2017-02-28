@@ -4,7 +4,7 @@
     <ul class="posts">
       <% posts.each do |post| %>
       <li>
-        <%= link_to post.title, post_path(post.slug), class: 'link-post' %>
+        <%= link_to post_title(post), post_path_with_slug(post), class: 'link-post' %>
       </li>
       <% end %>
     </ul>

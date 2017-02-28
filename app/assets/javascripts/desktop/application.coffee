@@ -1,7 +1,7 @@
 #= require application
 #= require_self
 #= require_tree .
-#= require desktop/components/components
+#= require desktop/components
 
 class DesktopApplication extends TaoApplication
 

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html { @posts = posts.page(params[:page]).per(30) }
+      format.any(:html, :js) { @posts = posts.page(params[:page]).per(30) }
       format.atom { @posts = Post.article.published }
     end
   end
@@ -14,11 +14,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
-    render layout: 'empty'
+    @post = current_user.posts.create!
+    redirect_to edit_post_path(@post)
   end
 
   def edit
+    @turbolinks_no_cache = true
     render layout: 'empty'
   end
 
@@ -28,6 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
+    render('autosave') if params[:autosave].present?
   end
 
   def destroy

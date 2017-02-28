@@ -8,8 +8,7 @@ class Post < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
-  validates :slug, presence: true, uniqueness: true
-  validates :title, presence: true, uniqueness: true
+  validates_uniqueness_of :slug, conditions: -> { where.not(slug: [nil, '']) }
 
   before_save :format_slug, :create_tags
 
@@ -26,6 +25,8 @@ class Post < ApplicationRecord
 
   def to_slug
     slug = self.slug
+    return slug unless slug.present?
+
     slug.gsub! /['`]/,""
     slug.gsub! /[.`]/,""
     slug.gsub! /\s*@\s*/, " at "
@@ -38,6 +39,8 @@ class Post < ApplicationRecord
   end
 
   def abstract
+    return '' unless self.content.present?
+
     # first p tag or first 100 words
     /<p>(.*?)<\/p>/.match(self.content).to_a.last || self.content.first(100)
   end

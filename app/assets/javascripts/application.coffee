@@ -10,3 +10,8 @@ class Application extends TaoApplication
   _init: ->
     super
     @cable = ActionCable.createConsumer()
+
+  _initI18n: ->
+    super
+    if moment? && @locale
+      moment.locale @locale.toLowerCase()

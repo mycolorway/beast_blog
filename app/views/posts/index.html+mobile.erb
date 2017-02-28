@@ -1,0 +1,12 @@
+<div class="posts">
+  <% if @posts.any? %>
+    <%= render 'list', posts: @posts %>
+  <% else %>
+    <p class="no-post">
+      <%= t '.no_post' %>
+    </p>
+    <% if logged_in? %>
+      <%= link_to t('.create_first_post'), new_post_path, class: 'link-new-post' %>
+    <% end %>
+  <% end %>
+</div>
