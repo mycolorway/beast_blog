@@ -1,0 +1,2 @@
+class BeastCommentInput < Component
+end

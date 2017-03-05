@@ -1,0 +1,7 @@
+<div class="user">
+  <%= capture &block if block %>
+  <%= render_avatar current_user %>
+  <span class="name"><%= current_user.name %></span>
+</div>
+<%= render 'comments/form', post: @post %>
+

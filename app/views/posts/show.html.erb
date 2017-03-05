@@ -36,13 +36,7 @@
 </article>
 
 <% if logged_in? %>
-  <beast-comment-input>
-    <div class="user">
-      <%= render_avatar current_user %>
-      <span class="name"><%= current_user.name %></span>
-    </div>
-    <%= render 'comments/form', post: @post %>
-  </beast-comment-input>
+  <%= beast_comment_input %>
 <% else %>
   <div class="login-to-comment">
     <%= image_tag('avatar.png', class: "avatar") %>
