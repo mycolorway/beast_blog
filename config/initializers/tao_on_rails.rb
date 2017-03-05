@@ -1,11 +1,11 @@
-Dir.glob(Rails.root.join('app/components/*')).each do |x| require x end
+Dir.glob(Rails.root.join('app/components/*')).each do |component| require component end
 
-module TaoPopover
+module TaoOnRails
   module ActionView
 
     module Helpers
       def render_componment component
-        render component.template_path, options: component.options, block: component.block
+        render partial: component.template_path, locals: { component: component, block: component.block }
       end
 
       Component.descendants.each do |klass|
@@ -27,5 +27,5 @@ module TaoPopover
 end
 
 ActiveSupport.on_load :action_view do
-  include TaoPopover::ActionView::Helpers
+  include TaoOnRails::ActionView::Helpers
 end

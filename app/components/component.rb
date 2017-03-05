@@ -1,12 +1,13 @@
 class Component
 
-  attr_reader :options, :block, :template_path, :attributes
+  attr_reader :options, :block, :template_path, :attributes, :locals
 
   def initialize options = {}, &block
     @options = options
     @block = block
     @template_path = options.delete(:template_path) || default_path
     @attributes = options.delete(:attributes)
+    @locals = options.delete(:locals)
   end
 
   def tag_name
