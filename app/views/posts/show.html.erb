@@ -36,9 +36,7 @@
 </article>
 
 <% if logged_in? %>
-  <%= beast_comment_input({ locals: { post: @post }}) do %>
-    <h1>ririri</h1>
-  <% end %>
+  <%= beast_comment_input({ locals: { post: @post } }) %>
 <% else %>
   <div class="login-to-comment">
     <%= image_tag('avatar.png', class: "avatar") %>

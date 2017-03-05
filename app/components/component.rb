@@ -7,7 +7,7 @@ class Component
     @block = block
     @template_path = options.delete(:template_path) || default_path
     @attributes = options.delete(:attributes)
-    @locals = options.delete(:locals)
+    @locals = OpenStruct.new(options.delete(:locals))
   end
 
   def tag_name
