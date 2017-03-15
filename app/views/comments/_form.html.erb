@@ -1,6 +1,7 @@
-<tao-form class="comment-form">
-<%= simple_form_for Comment.new(post: post), url: post_comments_path(post), remote: true do |f| %>
-  <%= f.input :content, placeholder: true, label: false %>
-  <%= f.button :button, t('.submit'), disabled: true %>
+<% options= {attributes: {class: 'comment-form'}} %>
+<%= tao_form options do %>
+  <% simple_form_for Comment.new(post: post), url: post_comments_path(post), remote: true do |f| %>
+    <%= f.input :content, placeholder: true, label: false %>
+    <%= f.button :button, t('.submit'), disabled: true %>
+  <% end %>
 <% end %>
-</tao-form>

@@ -14,5 +14,4 @@ module ApplicationHelper
       alt: user.name
     )
   end
-
 end

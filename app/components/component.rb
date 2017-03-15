@@ -1,13 +1,21 @@
+require 'componment_view'
+
 class Component
+  include ComponentView
 
-  attr_reader :options, :block, :template_path, :attributes, :locals
+  attr_reader :options, :block, :template_path, :attributes, :locals, :block_content, :controller
 
-  def initialize options = {}, &block
+  def initialize options = {}, controller = nil, &block
+    @controller = controller
     @options = options
-    @block = block
+    @block_content = block_given? ? yield : ""
     @template_path = options.delete(:template_path) || default_path
     @attributes = options.delete(:attributes)
     @locals = OpenStruct.new(options.delete(:locals))
+  end
+
+  def render
+    view.render partial: self.template_path, locals: { component: self }
   end
 
   def tag_name
@@ -27,5 +35,4 @@ class Component
   def class_name_without_modules
     self.class.name.demodulize
   end
-
 end

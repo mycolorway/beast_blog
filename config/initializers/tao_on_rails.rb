@@ -1,28 +1,18 @@
-Dir.glob(Rails.root.join('app/components/*')).each do |component| require component end
-
 module TaoOnRails
   module ActionView
-
     module Helpers
-      def render_componment component
-        render partial: component.template_path, locals: { component: component, block: component.block }
-      end
+      Dir.glob(Rails.root.join('app/components/*')).each do |component| require component end
 
       Component.descendants.each do |klass|
         instance = klass.new
         module_eval %Q{
           def #{instance.component_name} options = {}, &block
-            component = #{klass.name}.new options, &block
-            content_tag component.tag_name, component.attributes do
-              render_componment component
-            end
+            component = #{klass.name}.new options, controller, &block
+            component.render
           end
         }
+        end
       end
-
-    end
-
-
   end
 end
 
