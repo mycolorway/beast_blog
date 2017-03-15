@@ -2,6 +2,6 @@
 <%= tao_form options do %>
   <% simple_form_for Comment.new(post: post), url: post_comments_path(post), remote: true do |f| %>
     <%= f.input :content, placeholder: true, label: false %>
-    <%= f.button :button, t('.submit'), disabled: true %>
+    <%= f.button :button, t('.submit') %>
   <% end %>
 <% end %>

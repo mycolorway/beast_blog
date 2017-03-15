@@ -1,4 +1,4 @@
-require 'componment_view'
+require 'component_view'
 
 class Component
   include ComponentView
