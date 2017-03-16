@@ -6,6 +6,17 @@ GIT
     active_type (0.6.2)
       activerecord (>= 3.2)
 
+GIT
+  remote: git://github.com/mycolorway/tao_on_rails.git
+  revision: 59c24f15c5772551ebd3028fe81bec7a76a1d619
+  branch: terry-integrate-with-rails
+  specs:
+    tao_on_rails (0.6.12)
+      jquery-rails (~> 4.2)
+      lodash-rails (~> 4.16)
+      rails (~> 5.0, >= 5.0.1)
+      turbolinks (~> 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:

@@ -1,2 +1,2 @@
-class BeastCommentInput < Component
+class BeastCommentInput < TaoOnRails::Component
 end
