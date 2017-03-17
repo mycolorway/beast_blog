@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/mycolorway/tao_on_rails.git
-  revision: fefabc3cd896d47fefece94e5245dee67aeb8c07
+  revision: e71d721f4105652785ed6798917f2d9c928f9086
   branch: terry-integrate-with-rails
   specs:
     tao_on_rails (0.6.12)
