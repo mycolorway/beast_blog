@@ -8,5 +8,6 @@ class Editor extends TaoComponent
     new Simditor
       textarea: $(@).find 'textarea'
       toolbarFloatOffset: 24
+      defaultImage: '/simditor-default-image.png'
 
 TaoComponent.register Editor

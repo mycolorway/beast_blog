@@ -32,6 +32,14 @@ beast-editor {
 
       .simditor-body {
         padding: 32px 0;
+
+        img {
+          max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0;
+          box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+        }
       }
 
       .simditor-placeholder {
@@ -39,9 +47,36 @@ beast-editor {
         color: #cccccc;
       }
     }
+
+    .simditor-popover .settings-field {
+      input[type=text] {
+        display: inline;
+        padding: 2px;
+        height: 22px;
+      }
+
+      select {
+        display: inline;
+        width: 200px;
+        border-radius: 2px;
+        height: 22px;
+        padding: 2px;
+        font-size: 12px;
+      }
+
+    }
+
   }
 }
 
 .editor-style {
   line-height: 2.0;
+
+  img {
+    margin: 0;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+  }
 }

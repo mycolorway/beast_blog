@@ -2,13 +2,15 @@
 
 .post-form {
 
-  input[type='text'],
-  textarea {
-    border: none;
-    padding: 0;
+  .form-input .input-content {
+    & > input[type='text'],
+    & > textarea {
+      border: none;
+      padding: 0;
 
-    &:focus {
-      box-shadow: none;
+      &:focus {
+        box-shadow: none;
+      }
     }
   }
 

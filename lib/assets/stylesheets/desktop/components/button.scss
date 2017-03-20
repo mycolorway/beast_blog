@@ -13,6 +13,7 @@ button, .button {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 200ms;
 
   &:focus, &.focus {
     border-color: #ACC6E4;
