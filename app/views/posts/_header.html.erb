@@ -1,13 +1,13 @@
 <header>
   <div class="left">
     <%= link_to post_path(post), class: 'link-return', title: t('.return') do %>
-      <%= icon_tag :close %>
+      <%= tao_icon :close %>
     <% end %>
 
-    <beast-post-autosave url="<%= post_path(post, autosave: true) %>" value-field-selector=".field-post-content">
+    <%= beast_post_autosave :url => post_path(post, autosave: true), :'value-field-selector' => '.field-post-content' do %>
       <%= t '.last_save_at' %>
       <span class="time"></span>
-    </beast-post-autosave>
+    <% end %>
   </div>
   <div class="right">
     <%= render_avatar current_user %>

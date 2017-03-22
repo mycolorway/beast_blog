@@ -1,7 +1,7 @@
 
 class ScrollLoad extends TaoComponent
 
-  @tag: 'beast-scroll-load'
+  @tag 'beast-scroll-load'
 
   @attribute 'url'
 

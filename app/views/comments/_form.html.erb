@@ -1,7 +1,10 @@
-<% options= {attributes: {class: 'comment-form'}} %>
-<%= tao_form options do %>
-  <% simple_form_for Comment.new(post: post), url: post_comments_path(post), remote: true do |f| %>
+<%= beast_comment_form Comment.new(post: post), url: post_comments_path(post), remote: true, html: {class: 'comment-form'} do |f| %>
+  <div class="user">
+    <%= render_avatar current_user %>
+    <span class="name"><%= current_user.name %></span>
+  </div>
+  <div class="inputs">
     <%= f.input :content, placeholder: true, label: false %>
-    <%= f.button :button, t('.submit') %>
-  <% end %>
+    <%= f.button :button, t('.submit'), disabled: true %>
+  </div>
 <% end %>

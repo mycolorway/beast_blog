@@ -36,7 +36,7 @@
 </article>
 
 <% if logged_in? %>
-  <%= beast_comment_input({ locals: { post: @post } }) %>
+  <%= render 'comments/form', post: @post %>
 <% else %>
   <div class="login-to-comment">
     <%= image_tag('avatar.png', class: "avatar") %>
@@ -44,9 +44,9 @@
   </div>
 <% end %>
 
-<beast-comment-list empty="<%= @comments.blank? %>">
+<%= beast_comment_list empty: @comments.blank? do %>
   <h3><%= t('.comments_title_html', count: @comments.size) %></h3>
   <% if @comments.any? %>
-  <%= render 'comments/list', comments: @comments, post: @post %>
+    <%= render 'comments/list', comments: @comments, post: @post %>
   <% end %>
-</beast-comment-list>
+<% end %>

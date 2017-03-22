@@ -1,7 +1,7 @@
 
 class PostAutosave extends TaoComponent
 
-  @tag: 'beast-post-autosave'
+  @tag 'beast-post-autosave'
 
   @attribute 'url'
 

@@ -1,6 +1,6 @@
 class CommentList extends TaoComponent
 
-  @tag: 'beast-comment-list'
+  @tag 'beast-comment-list'
 
   @attribute 'empty', type: 'boolean'
 
@@ -11,9 +11,10 @@ class CommentList extends TaoComponent
     else
       @jq.append $comment
 
-  removeComment: (selector) ->
+  removeComment: (selector, callback) ->
     @jq.find(selector).fadeOut ->
       $(@).remove()
+      callback?()
 
   updateCommentCount: (count) ->
     @jq.find('h3 .count').text count

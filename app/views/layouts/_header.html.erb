@@ -17,7 +17,7 @@
       <% if logged_in? && current_user.author? %>
       <div class="user-info">
         <%= link_to new_post_path, class: 'link-new-post' do %>
-          <%= icon_tag :edit %>
+          <%= tao_icon :edit %>
           <%= t('.new_article') %>
         <% end %>
         <%= render_avatar current_user %>

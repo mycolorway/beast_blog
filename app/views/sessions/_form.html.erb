@@ -1,7 +1,5 @@
-<tao-form class="login-form">
-  <%= simple_form_for session, url: sessions_path, remote: true do |f| %>
-    <%= f.input :email, label: false, placeholder: true %>
-    <%= f.input :password, label: false, placeholder: true %>
-    <%= f.button :submit, t('.login') %>
-  <% end %>
-</tao-form>
+<%= tao_form session, url: sessions_path, remote: true, html: {class: 'login-form'} do |f| %>
+  <%= f.input :email, label: false, placeholder: true %>
+  <%= f.input :password, label: false, placeholder: true %>
+  <%= f.button :submit, t('.login') %>
+<% end %>
