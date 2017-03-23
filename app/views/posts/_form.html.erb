@@ -1,14 +1,13 @@
-<tao-form class="post-form">
-<%= simple_form_for(post, remote: true) do |f| %>
+<%= tao_form post, remote: true, html: {class: 'post-form'} do |f| %>
 
   <%= render 'header', post: post, f: f %>
 
   <div class="writing-post">
     <%= f.input :title, label: false, placeholder: true, wrapper_html: {class: 'post-title'} %>
 
-    <beast-editor class="post-content">
+    <%= beast_editor class: 'post-content' do %>
       <%= f.input_field :content, label: false, placeholder: true, class: 'field-post-content' %>
-    </beast-editor>
+    <% end %>
 
     <%= f.input :slug, label: t('.slug_label_html', path: post_url(id: '')),
       required: false, wrapper_html: {class: 'post-slug'}, placeholder: true %>
@@ -26,6 +25,4 @@
     </div>
   </div>
 
-
 <% end %>
-</tao-form>

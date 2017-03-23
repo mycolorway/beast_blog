@@ -1,5 +1,5 @@
 class PostsShowPage extends TaoPage
 
-  @tag: 'posts-show-page'
+  @tag 'posts-show-page'
 
 TaoPage.register PostsShowPage

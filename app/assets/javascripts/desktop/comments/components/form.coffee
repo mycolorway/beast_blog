@@ -1,26 +1,28 @@
-class CommentInput extends TaoComponent
+class CommentForm extends TaoForm
 
-  @tag: 'beast-comment-input'
+  @tag 'beast-comment-form'
 
-  _init: ->
+  _connected: ->
+    @textarea = @jq.find('textarea')
     super
 
-    @form = @jq.find('.comment-form').get(0)
-    @textarea = @jq.find('textarea')
-
-    @_bind()
-
   _bind: ->
-    @form.on 'beforeSubmit', (e) =>
+    super
+    @on 'beforeSubmit', (e) =>
       return false unless @textarea.val()
 
-    @textarea.on 'input', _.throttle (e) =>
+    @textarea.on "input.comment-form-#{@taoId}", _.throttle (e) =>
       @_resizeTextarea()
       @_refreshSubmitButton()
     , 100
 
+  _disconnected: ->
+    super
+    @textarea.off ".comment-form-#{@taoId}"
+    @textarea = null
+
   clear: ->
-    @jq.find('textarea').val('')
+    @textarea.val ''
 
   _resizeTextarea: ->
     @textarea.css 'height', 'auto'
@@ -29,6 +31,6 @@ class CommentInput extends TaoComponent
     @textarea.css 'height', scrollHeight
 
   _refreshSubmitButton: ->
-    @form.jq.find('button').prop 'disabled', !@textarea.val()
+    @jq.find('button').prop 'disabled', !@textarea.val()
 
-TaoComponent.register CommentInput
+TaoComponent.register CommentForm

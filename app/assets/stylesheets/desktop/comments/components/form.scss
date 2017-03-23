@@ -1,6 +1,6 @@
 @import 'desktop/_base';
 
-beast-comment-input {
+beast-comment-form {
   display: block;
 
   .user {
@@ -16,7 +16,7 @@ beast-comment-input {
     }
   }
 
-  .comment-form {
+  .inputs {
     margin: 16px 0 0 0;
     position: relative;
 

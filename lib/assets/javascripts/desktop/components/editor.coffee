@@ -2,7 +2,7 @@
 
 class Editor extends TaoComponent
 
-  @tag: 'beast-editor'
+  @tag 'beast-editor'
 
   _init: ->
     new Simditor

@@ -1,5 +1,5 @@
 class SessionsNewPage extends TaoPage
 
-  @tag: 'sessions-new-page'
+  @tag 'sessions-new-page'
 
 TaoPage.register SessionsNewPage
