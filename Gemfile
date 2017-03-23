@@ -70,8 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_type', github: 'makandra/active_type', branch: :master
 
 # Front-End
-# gem 'tao_on_rails', '~> 0.7.0'
-gem 'tao_on_rails', github: 'mycolorway/tao_on_rails', branch: 'master'
+gem 'tao_on_rails', '~> 0.7.0'
 gem 'momentjs-rails', '~> 2.17.1'
 gem 'simple_form', '~> 3.3.1'
 gem 'autoprefixer-rails', '~> 6.4.0'
