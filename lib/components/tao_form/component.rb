@@ -4,8 +4,8 @@ module TaoForm
 
     attr_reader :record, :html_options
 
-    def initialize record, options, view
-      super options, view
+    def initialize view, record, options
+      super view, options
       @record = record
       @html_options = @options.delete(:html) || {}
     end
