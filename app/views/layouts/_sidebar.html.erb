@@ -15,7 +15,7 @@
         <%= link_to t('.archive'), archive_path %>
       </li>
       <li>
-        <%= link_to t('.rss'), '#' %>
+        <%= link_to t('.rss'), feed_path %>
       </li>
       <li>
         <% if logged_in? && current_user.author? %>
