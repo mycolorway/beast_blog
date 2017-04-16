@@ -57,6 +57,7 @@ posts-index-page {
         align-items: center;
         margin: 12px 0 0 0;
         font-size: 12px;
+        flex-wrap: wrap;
 
         .created-at,
         .author {
