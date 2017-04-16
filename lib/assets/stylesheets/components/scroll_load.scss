@@ -1,4 +1,4 @@
-@import '_base';
+@import 'globals';
 
 beast-scroll-load {
   display: flex;
@@ -9,7 +9,7 @@ beast-scroll-load {
     display: block;
     flex: 0 0 auto;
     background: #f3f3f3;
-    color: $color-light-text;
+    color: $lighter-grey-color;
     font-size: 12px;
     line-height: 1;
     padding: 8px 10px;

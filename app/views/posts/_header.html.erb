@@ -11,7 +11,7 @@
   </div>
   <div class="right">
     <%= render_avatar current_user %>
-    <%= f.button :submit, t('.save'), class: 'button button-secondary' %>
+    <%= f.button :submit, t('.save') %>
     <% unless post.published? %>
       <%= f.button :button, t('.publish'), class: 'button', name: 'post[published]', value: true,
         data: {confirm: t('.confirm_publish')} %>

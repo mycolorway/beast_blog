@@ -1,8 +1,8 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 .pagination {
   display: flex;
-  
+
   a, span.current {
     background: #F5F5F5;
     margin-right: 8px;
@@ -13,11 +13,11 @@
     height: 32px;
     min-width: 32px;
     padding: 0 10px;
-    color: $color-light-text;
+    color: $lighter-grey-color;
   }
 
   span.current {
     color: white;
-    background: $color-ui;
+    background: $ui-color;
   }
 }

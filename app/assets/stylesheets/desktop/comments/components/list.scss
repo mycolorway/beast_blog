@@ -1,4 +1,4 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 beast-comment-list {
   h3 {
@@ -44,7 +44,7 @@ beast-comment-list {
 
         .created-at {
           font-size: 12px;
-          color: $color-lighter-text;
+          color: $lighter-grey-color;
         }
       }
 

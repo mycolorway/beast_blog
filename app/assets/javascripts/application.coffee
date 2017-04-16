@@ -1,4 +1,6 @@
 #= require tao
+#= require tao/ui
+#= require tao/ui/icons/beast
 #= require action_cable
 #= require moment
 #= require moment/zh-cn
@@ -15,3 +17,5 @@ class Application extends TaoApplication
     super
     if moment? && @locale
       moment.locale @locale.toLowerCase()
+
+window.Application = Application

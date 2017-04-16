@@ -1,4 +1,4 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 posts-show-page {
 
@@ -13,7 +13,7 @@ posts-show-page {
 
 
   .post {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $border-color;
     margin: 0 0 64px 0;
 
     & > h2 {
@@ -26,7 +26,7 @@ posts-show-page {
         padding: 4px 6px;
         color: #ffffff;
         background: #999999;
-        font-size: $font-size-small;
+        font-size: $font-size-s;
         font-weight: normal;
         border-radius: 4px;
         vertical-align: middle;
@@ -36,7 +36,7 @@ posts-show-page {
 
     .meta {
       text-align: center;
-      color: $color-lighter-text;
+      color: $lighter-grey-color;
       margin: 0 0 8px 0;
 
       span {
@@ -66,7 +66,7 @@ posts-show-page {
     }
 
     .article-content {
-      font-size: $font-size-big;
+      font-size: $font-size-l;
       margin: 32px 0 64px 0;
     }
 
@@ -81,7 +81,7 @@ posts-show-page {
 
         .label {
           width: 80px;
-          color: $color-light-text;
+          color: $lighter-grey-color;
           margin: 0 12px 0 0;
 
           &:after {
@@ -107,7 +107,7 @@ posts-show-page {
     margin: 0 0 32px 0;
     display: flex;
     align-items: center;
-    color: $color-lighter-text;
+    color: $lighter-grey-color;
 
     .avatar {
       margin: 0 12px 0 0;

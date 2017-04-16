@@ -1,4 +1,4 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 posts-index-page {
 
@@ -15,7 +15,7 @@ posts-index-page {
 
   .posts {
     .no-post {
-      color: $color-light-text;
+      color: $lighter-grey-color;
       margin: 16px 0;
     }
 
@@ -27,10 +27,10 @@ posts-index-page {
         margin: 0 0 24px 0;
 
         a {
-          color: $color-text;
+          color: $text-color;
 
           &:hover {
-            color: $color-link;
+            color: $link-color;
           }
         }
 
@@ -39,7 +39,7 @@ posts-index-page {
           padding: 4px 6px;
           color: #ffffff;
           background: #999999;
-          font-size: $font-size-small;
+          font-size: $font-size-s;
           font-weight: normal;
           border-radius: 4px;
           vertical-align: middle;
@@ -49,7 +49,7 @@ posts-index-page {
 
       .abstract {
         line-height: 2.0;
-        color: $color-light-text;
+        color: $lighter-grey-color;
       }
 
       .meta {
@@ -60,7 +60,7 @@ posts-index-page {
 
         .created-at,
         .author {
-          color: $color-lighter-text;
+          color: $lighter-grey-color;
           margin: 0 10px 0 0;
         }
 

@@ -1,10 +1,10 @@
-@import 'mobile/_base';
+@import 'mobile/globals';
 
 posts-index-page {
 
   .posts {
     .no-post {
-      color: $color-light-text;
+      color: $lighter-grey-color;
       margin: 15px 0;
     }
 
@@ -16,7 +16,7 @@ posts-index-page {
         margin: 0 0 15px 0;
 
         a {
-          color: $color-text;
+          color: $text-color;
         }
 
         .label {
@@ -24,7 +24,7 @@ posts-index-page {
           padding: 5px 6px;
           color: #ffffff;
           background: #999999;
-          font-size: $font-size-small;
+          font-size: $font-size-s;
           font-weight: normal;
           border-radius: 4px;
           vertical-align: middle;
@@ -34,18 +34,18 @@ posts-index-page {
 
       .abstract {
         line-height: 2.0;
-        color: $color-light-text;
+        color: $lighter-grey-color;
       }
 
       .meta {
         display: flex;
         align-items: center;
         margin: 15px 0 0 0;
-        font-size: $font-size-small;
+        font-size: $font-size-s;
 
         .created-at,
         .author {
-          color: $color-lighter-text;
+          color: $lighter-grey-color;
           margin: 0 10px 0 0;
         }
 

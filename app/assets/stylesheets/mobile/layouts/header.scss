@@ -1,4 +1,4 @@
-@import 'mobile/_base';
+@import 'mobile/globals';
 
 .tao-page[layout="default"] header {
   display: flex;
@@ -6,15 +6,15 @@
   padding: 0 15px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $border-color;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 
   h1 {
-    font-size: $font-size-big;
+    font-size: $font-size-l;
   }
 
   .desc {
-    font-size: $font-size-small;
-    color: $color-lighter-text;
+    font-size: $font-size-s;
+    color: $lighter-grey-color;
   }
 }

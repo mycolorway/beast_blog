@@ -1,4 +1,4 @@
-@import 'mobile/_base';
+@import 'mobile/globals';
 
 posts-show-page {
 
@@ -13,7 +13,7 @@ posts-show-page {
         padding: 4px 6px;
         color: #ffffff;
         background: #999999;
-        font-size: $font-size-small;
+        font-size: $font-size-s;
         font-weight: normal;
         border-radius: 4px;
         vertical-align: middle;
@@ -23,7 +23,7 @@ posts-show-page {
 
     .meta {
       text-align: center;
-      color: $color-lighter-text;
+      color: $lighter-grey-color;
       margin: 0 0 8px 0;
 
       span {

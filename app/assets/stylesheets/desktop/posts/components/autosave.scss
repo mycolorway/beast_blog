@@ -1,9 +1,9 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 beast-post-autosave {
   display: none;
-  font-size: $font-size-small;
-  color: $color-lighter-text;
+  font-size: $font-size-s;
+  color: $lighter-grey-color;
 
   .time {
     margin: 0 4px;

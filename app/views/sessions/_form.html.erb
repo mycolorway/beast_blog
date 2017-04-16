@@ -1,5 +1,5 @@
 <%= tao_form session, url: sessions_path, remote: true, html: {class: 'login-form'} do |f| %>
   <%= f.input :email, label: false, placeholder: true %>
   <%= f.input :password, label: false, placeholder: true %>
-  <%= f.button :submit, t('.login') %>
+  <%= f.button :submit, t('.login'), class: 'button-primary button-block' %>
 <% end %>

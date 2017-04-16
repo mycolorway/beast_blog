@@ -1,11 +1,11 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 archives-show-page {
   .archive {
     margin: 0 0 64px 0;
-    
+
     h2 {
-      color: $color-lighter-text;
+      color: $lighter-grey-color;
       font-size: 32px;
       font-weight: normal;
       margin: 0 0 32px 0;
@@ -20,12 +20,12 @@ archives-show-page {
         margin: 0 0 12px 0;
 
         a {
-          color: $color-text;
-          font-size: $font-size-big;
+          color: $text-color;
+          font-size: $font-size-l;
           font-weight: bold;
 
           &:hover {
-            color: $color-link;
+            color: $link-color;
           }
         }
       }
@@ -37,7 +37,7 @@ archives-show-page {
       line-height: 24px;
       a {
         text-decoration: none;
-        color: $color-text;
+        color: $text-color;
       }
     }
   }

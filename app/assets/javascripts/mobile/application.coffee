@@ -3,7 +3,7 @@
 #= require mobile/components
 #= require_tree .
 
-class MobileApplication extends TaoApplication
+class MobileApplication extends Application
 
 window.Beast = {}
 Beast.app = window.app = new MobileApplication()

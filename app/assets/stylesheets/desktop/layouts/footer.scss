@@ -1,10 +1,10 @@
-@import 'desktop/_base';
+@import 'desktop/globals';
 
 .tao-page[layout="default"] footer {
   height: 80px;
   line-height: 80px;
   text-align: center;
-  border-top: 1px solid $color-border;
-  font-size: $font-size-small;
-  color: $color-lighter-text;
+  border-top: 1px solid $border-color;
+  font-size: $font-size-s;
+  color: $lighter-grey-color;
 }
