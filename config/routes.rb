@@ -12,10 +12,6 @@ Rails.application.routes.draw do
   end
   resource :archive, only: [:show]
 
-  resources :albums do
-    resources :photos, only: [:create]
-  end
-
   resources :invitations, only: [:edit, :update]
 
   # feed
