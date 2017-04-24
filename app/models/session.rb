@@ -1,16 +1,26 @@
-class Session < ActiveType::Object
-  attr_accessor :user
-  attr_accessor :omniauth
-  attribute :email, :string
-  attribute :password, :string
+class Session
+  include ActiveModel::Validations
+  include ActiveModel::Conversion
+  extend ActiveModel::Naming
+
+  attr_accessor :user, :omniauth, :email, :password
 
   validates :email, presence: true, unless: :omniauth
   validates :password, presence: true, unless: :omniauth
   validate :auth_user
 
+  def initialize(attributes = {})
+    self.attributes = attributes
+  end
+
+  def attributes=(attributes = {})
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
+  end
+
   def save
-    super
-    user
+    user if valid?
   end
 
   private
