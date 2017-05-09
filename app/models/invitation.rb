@@ -1,7 +1,7 @@
 class Invitation < ApplicationRecord
   attr_accessor :password
 
-  VALID_TIME_INTERVAL = 3.hours
+  VALID_TIME_INTERVAL = 240.hours
 
   validates :code, :valid_before, :email, :name, presence: true
   validates_uniqueness_of :code
@@ -59,6 +59,7 @@ class Invitation < ApplicationRecord
   end
 
   def send_mail
-    InvitationMailer.invite_email(self).deliver_later
+    # Disable email sending temporary
+    # InvitationMailer.invite_email(self).deliver_later
   end
 end
