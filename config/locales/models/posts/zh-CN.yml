@@ -1,5 +1,5 @@
 zh-CN:
-  activerecord:
+  activemodel:
     attributes:
       post:
         title: 标题

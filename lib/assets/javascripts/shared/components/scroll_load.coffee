@@ -9,16 +9,15 @@ class ScrollLoad extends TaoComponent
 
   _connected: ->
     $(window).on "scroll.scroll-load-#{@taoId}", _.throttle (e) =>
-      @_request() if !@loading && @_is_visible()
+      @_request() if !@loading && @_isVisible()
     , 100
     .scroll()
 
-  _is_visible: ->
+  _isVisible: ->
     $(document).scrollTop() > @jq.offset().top - $(window).height()
 
   _request: ->
     @loading = true
-
     $.ajax
       url: @url
       dataType: 'script'

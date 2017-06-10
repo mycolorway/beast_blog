@@ -1,4 +1,4 @@
-class CommentForm extends TaoForm
+class CommentForm extends Tao.Form.Element
 
   @tag 'beast-comment-form'
 
@@ -23,6 +23,7 @@ class CommentForm extends TaoForm
 
   clear: ->
     @textarea.val ''
+    @_refreshSubmitButton()
 
   _resizeTextarea: ->
     @textarea.css 'height', 'auto'

@@ -1,6 +1,8 @@
-//= require application
+//= require tao
+//= require tao/ui
 //= require desktop/components
 //= require_self
 //= require_tree ./
 
 @import 'desktop/globals';
+@import 'shared/base';

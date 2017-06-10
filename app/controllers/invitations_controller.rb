@@ -8,7 +8,7 @@ class InvitationsController < ApplicationController
   def update
     invitation.attributes = invitations_params
     if invitation.ready? && invitation.save
-      log_in invitation.author if invitation.active
+      log_in(invitation.author) if invitation.active
     end
   end
 

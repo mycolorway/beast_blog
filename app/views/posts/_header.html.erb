@@ -11,10 +11,10 @@
   </div>
   <div class="right">
     <%= render_avatar current_user %>
-    <%= f.button :submit, t('.save') %>
+    <%= f.button :button, t('.save'), data: {disable_with: t('.submiting')} %>
     <% unless post.published? %>
       <%= f.button :button, t('.publish'), class: 'button', name: 'post[published]', value: true,
-        data: {confirm: t('.confirm_publish')} %>
+        data: {confirm: t('.confirm_publish'), disable_with: t('.submiting')} %>
     <% end %>
   </div>
 </header>

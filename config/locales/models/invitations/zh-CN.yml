@@ -1,5 +1,5 @@
 zh-CN:
-  activerecord:
+  activemodel:
     attributes:
       invitation:
         email: 邮箱

@@ -5,7 +5,7 @@
   min-width: 1280px;
   height: 64px;
   padding: 0 18px;
-  background: #ffffff;
+  background: $white-color;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
@@ -25,18 +25,18 @@
       height: 32px;
       padding: 10px;
       margin: 0 16px 0 0;
-      background: #e6e6e6;
+      background: $grey-bg-color;
       border-radius: 100%;
 
       .icon-close {
         display: block;
-        fill: #262626;
+        fill: $grey-color;
         width: 12px;
         height: 12px;
       }
 
       &:hover {
-        opacity: 0.6;
+        opacity: 0.8;
       }
     }
   }

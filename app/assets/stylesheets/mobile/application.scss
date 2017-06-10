@@ -1,6 +1,8 @@
-//= require application
+//= require tao
+//= require tao/ui/mobile
 //= require mobile/components
 //= require_self
 //= require_tree ./
 
 @import 'mobile/globals';
+@import 'shared/base';

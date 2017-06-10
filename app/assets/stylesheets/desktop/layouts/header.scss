@@ -32,13 +32,13 @@
     .name {
       margin: 3px 0 0 0;
       font-size: 21px;
-      color: #ffffff;
+      color: $white-color;
     }
 
     .desc {
       margin: 3px 0 0 0;
       font-size: 18px;
-      color: #ffffff;
+      color: $white-color;
       opacity: 0.65;
     }
   }
@@ -59,7 +59,7 @@
         margin: 0 16px 0 0;
 
         a {
-          color: #ffffff;
+          color: $white-color;
 
           &:hover {
             opacity: 0.6;
@@ -74,13 +74,13 @@
       align-items: center;
 
       .link-new-post {
-        color: #ffffff;
+        color: $white-color;
 
         .icon-edit {
           width: 14px;
           height: 14px;
           margin: 0 8px 0 0;
-          fill: #ffffff;
+          fill: $white-color;
         }
 
         &:hover {

@@ -4,7 +4,7 @@ posts-index-page {
 
   .tag-title {
     font-size: 20px;
-    color: #666666;
+    color: $light-grey-color;
     margin: 0 0 32px 0;
 
     &:before {
@@ -37,8 +37,8 @@ posts-index-page {
         .label {
           display: inline-block;
           padding: 4px 6px;
-          color: #ffffff;
-          background: #999999;
+          color: $white-color;
+          background: $lighter-grey-color;
           font-size: $font-size-s;
           font-weight: normal;
           border-radius: 4px;

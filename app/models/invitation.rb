@@ -14,6 +14,7 @@ class Invitation < ApplicationRecord
   def active
     return unless available?
     ActiveRecord::Base.transaction do
+      debugger
       author = Author.create name: self.name, email: self.email, password: self.password
       self.update_attributes author_id: author.id, used: true if author.valid?
     end

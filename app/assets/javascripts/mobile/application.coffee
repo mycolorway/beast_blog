@@ -1,6 +1,8 @@
 #= require application
-#= require_self
+#= require tao/ui/mobile
+#= require tao/ui/icons/beast
 #= require mobile/components
+#= require_self
 #= require_tree .
 
 class MobileApplication extends Application

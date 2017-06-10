@@ -4,7 +4,7 @@ class PostsShowPage extends TaoPage
 
   _init: ->
     super
-    @commentForm = @jq.find('beast-comment-form').get(0)
-    @commentList = @jq.find('beast-comment-list').get(0)
+    @commentForm = @findComponent 'beast-comment-form'
+    @commentList = @findComponent 'beast-comment-list'
 
 TaoPage.register PostsShowPage

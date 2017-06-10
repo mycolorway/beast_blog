@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.1.1'
 
 gem 'mysql2'
 
@@ -66,8 +65,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Front-End
-gem 'tao_on_rails', '~> 0.8.0'
-gem 'tao_ui', '~> 0.1.1'
-gem 'momentjs-rails', '~> 2.17.1'
-gem 'simple_form', '~> 3.3.1'
-gem 'autoprefixer-rails', '~> 6.4.0'
+gem 'tao_on_rails', '~> 0.9.0'
+gem 'tao_ui', '~> 0.2.2'
+gem 'tao_form', '~> 0.1.2'

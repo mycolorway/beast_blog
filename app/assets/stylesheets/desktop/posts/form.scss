@@ -3,14 +3,10 @@
 .post-form {
 
   .form-input .input-content {
-    & > input[type='text'],
-    & > textarea {
+    input[type='text'],
+    textarea {
       border: none;
       padding: 0;
-
-      &:focus {
-        box-shadow: none;
-      }
     }
   }
 
@@ -47,7 +43,7 @@
         margin: 0;
 
         b {
-          color: #666666;
+          color: $light-grey-color;
         }
       }
 
@@ -59,6 +55,7 @@
           width: 100%;
           color: $text-color;
           padding: 0 4px;
+          line-height: $form-field-height;
         }
       }
     }

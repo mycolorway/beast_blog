@@ -33,7 +33,7 @@ class Session
     end
 
     if self.user.blank?
-      errors.add :custom, I18n.t('activerecord.errors.models.session.not_matched')
+      errors.add :custom, I18n.t('activemodel.errors.models.session.not_matched')
     end
   end
 end
